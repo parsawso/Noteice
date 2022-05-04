@@ -1,0 +1,26 @@
+/* Global Styles*/
+:root {
+  --primary-color: #333;
+  --light-color: #fff;
+  --success-color: #40bb75;
+  --error-color: #dc3b37;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #f5fbff;
+  color: var(--primary-color);
+  font-family: "Lato", sans-serif;
+  line-height: 1.6;
+  padding: 32rem;
+  height: 100vh;
+}
