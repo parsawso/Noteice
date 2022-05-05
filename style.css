@@ -6,6 +6,7 @@
   --light-color: #fff;
   --success-color: #40bb75;
   --error-color: #dc3b37;
+  --background-color: #f5fbff;
 }
 
 * {
@@ -19,7 +20,7 @@ html {
 }
 
 body {
-  background-color: #f5fbff;
+  background-color: var(--background-color);
   color: var(--primary-color);
   font-family: "Fira Sans", sans-serif;
   line-height: 1.6;
@@ -50,4 +51,31 @@ body {
   transform: scale(1.1);
   transition: 0.25s;
   box-shadow: 0 0 2.5rem #acacac;
+}
+
+/* top bar */
+.top-bar {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+}
+/* sidebar */
+.burger-menu-icon {
+  border: none;
+  position: relative;
+}
+
+/* Header */
+header {
+  position: relative;
+  color: var(--primary-color);
+  padding: 2rem;
+  font-size: 1.25rem;
+}
+
+.Title {
+  font-size: 3rem;
+  padding: 0 2rem 2rem 0;
 }
