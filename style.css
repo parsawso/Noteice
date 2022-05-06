@@ -78,7 +78,7 @@ body {
   cursor: pointer;
   border: none;
   position: relative;
-  background-color: var(--background-color);
+  background-color: transparent;
   transition: 0.2s;
 }
 
@@ -91,4 +91,57 @@ header {
   position: relative;
   left: 3rem;
   font-size: 1.25rem;
+}
+
+/* aside */
+aside {
+  box-shadow: 5rem 0 0#acacac;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 3rem;
+  background: var(--light-color);
+  /* display: none; */
+}
+
+.sidebar-header {
+  position: sticky;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding: 3rem;
+}
+
+#sidebar-title {
+  position: relative;
+  font-size: 2.25rem;
+  left: 3rem;
+}
+
+.edit-icon {
+  position: absolute;
+  right: 3rem;
+  background-color: transparent;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.edit-icon:hover {
+  transform: scale(1.1);
+  transition: 0.2s;
+}
+
+.categories {
+  list-style: none;
+  position: relative;
+  display: grid;
+  row-gap: 2rem;
+  padding: 1rem 3rem 1rem 5rem;
+}
+
+.categories li {
+  cursor: pointer;
+  font-size: 2rem;
 }
