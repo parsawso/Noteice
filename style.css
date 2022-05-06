@@ -94,16 +94,16 @@ header {
 }
 
 /* aside */
-aside {
-  box-shadow: 5rem 0 0#acacac;
+.sidebar {
   position: absolute;
   z-index: 1;
   left: 0;
   top: 0;
   bottom: 0;
-  right: 3rem;
+  right: 100%;
+  box-shadow: 0 0 100rem black;
   background: var(--light-color);
-  /* display: none; */
+  overflow: hidden;
 }
 
 .sidebar-header {
