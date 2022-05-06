@@ -53,6 +53,12 @@ body {
   box-shadow: 0 0 2.5rem #acacac;
 }
 
+/* Title */
+.Title {
+  font-size: 3rem;
+  padding: 0 2rem 2rem 0;
+}
+
 /* top bar */
 .top-bar {
   position: relative;
@@ -60,22 +66,24 @@ body {
   flex-direction: row;
   justify-content: left;
   align-items: center;
+  color: var(--primary-color);
 }
-/* sidebar */
+
 .burger-menu-icon {
+  cursor: pointer;
   border: none;
   position: relative;
+  background-color: var(--background-color);
+  transition: 0.2s;
 }
 
-/* Header */
+.burger-menu-icon:hover {
+  transform: scale(1.1);
+  transition: 0.2s;
+}
+
 header {
   position: relative;
-  color: var(--primary-color);
   padding: 2rem;
   font-size: 1.25rem;
-}
-
-.Title {
-  font-size: 3rem;
-  padding: 0 2rem 2rem 0;
 }
