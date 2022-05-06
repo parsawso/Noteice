@@ -61,7 +61,12 @@ body {
 
 /* top bar */
 .top-bar {
-  position: relative;
+  background-color: var(--light-color);
+  box-shadow: 0 0 2.5rem #eeeeee;
+  border-radius: 0.5rem;
+  padding: 1.5rem 2rem;
+  position: sticky;
+  top: 3rem;
   display: flex;
   flex-direction: row;
   justify-content: left;
@@ -84,6 +89,6 @@ body {
 
 header {
   position: relative;
-  padding: 2rem;
+  left: 3rem;
   font-size: 1.25rem;
 }
