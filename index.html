@@ -13,25 +13,10 @@
     <title>Document</title>
   </head>
   <body>
-    <aside class="sidebar">
-      <div class="sidebar-header">
-        <button class="burger-menu-icon">
-          <i class="fa-solid fa-bars fa-2x"></i>
-        </button>
-        <h2 id="sidebar-title">My Categories</h2>
-        <i class="fa-solid fa-pen-to-square fa-2x edit-icon"></i>
-      </div>
-      <ul class="categories">
-        <li>Bussiness</li>
-        <li>Life</li>
-        <li>Shopping</li>
-      </ul>
-    </aside>
-
     <h1 class="Title">To Do</h1>
     <div class="top-bar">
       <nav>
-        <button class="burger-menu-icon">
+        <button class="burger-menu-icon" onclick="openSidebar()">
           <i class="fa-solid fa-bars fa-2x"></i>
         </button>
       </nav>
@@ -42,6 +27,20 @@
     <button class="btn btn-circle">
       <i class="fa-solid fa-plus fa-2x"></i>
     </button>
+
+    <aside id="sidebar">
+      <div class="sidebar-header">
+        <button class="burger-menu-icon" onclick="closeSidebar()">
+          <i class="fa-solid fa-bars fa-2x"></i>
+        </button>
+        <h2 id="sidebar-title">My Categories</h2>
+        <i class="fa-solid fa-pen-to-square fa-2x edit-icon pen-icon"></i>
+      </div>
+      <ul class="categories">
+        <li>Bussiness</li>
+        <li>Life</li>
+      </ul>
+    </aside>
     <script src="app.js"></script>
   </body>
 </html>
