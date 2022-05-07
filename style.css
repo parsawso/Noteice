@@ -109,7 +109,7 @@ header {
   white-space: nowrap;
 }
 
-.sidebar-header {
+#sidebar-header {
   background-color: var(--light-color);
   border-radius: 1rem;
   position: sticky;
@@ -120,6 +120,7 @@ header {
   margin: 3rem;
   padding: 1.5rem 2rem;
   box-shadow: 0 0 2.5rem #eeeeee;
+  transition: 1s ease-out;
 }
 
 #sidebar-title {
