@@ -114,6 +114,7 @@ header {
   border-radius: 1rem;
   position: sticky;
   display: flex;
+  flex-direction: row;
   justify-content: left;
   align-items: center;
   margin: 3rem;
@@ -127,7 +128,7 @@ header {
   left: 3rem;
 }
 
-.edit-icon {
+.pen-icon {
   position: absolute;
   right: 3rem;
   background-color: transparent;
@@ -135,7 +136,7 @@ header {
   transition: 0.2s;
 }
 
-.edit-icon:hover {
+.pen-icon:hover {
   transform: scale(1.1);
   transition: 0.2s;
 }
