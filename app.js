@@ -8,4 +8,3 @@ function openSidebar() {
 function closeSidebar() {
     sidebar.style.width = '0';
 }
-
