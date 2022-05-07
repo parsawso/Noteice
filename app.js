@@ -1,17 +1,11 @@
-const burgerMenuIcon = document.querySelector("burger-menu-icon");
-const sidebar = document.querySelector("sidebar");
+const sidebar = document.getElementById('sidebar');
+sidebar.style.width = '0';
 
-let sidebarOpen = false;
-
-function toggleSidebar(){
-    if (!sidebarOpen) {
-        sidebarOpen = true;
-        sidebar.style.right = "15%";
-    }
-    else {
-        sidebarOpen = false;
-        sidebar.style.right = "100%";
-    }
+function openSidebar() {
+    sidebar.style.width = '90%';
 }
 
-burgerMenuIcon.addEventListener("click",()=>toggleSidebar);
+function closeSidebar() {
+    sidebar.style.width = '0';
+}
+
