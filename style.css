@@ -44,6 +44,7 @@ body {
   position: fixed;
   bottom: 3rem;
   right: 3rem;
+  z-index: 1;
 }
 
 .btn-circle:hover {
@@ -80,6 +81,7 @@ body {
   justify-content: left;
   align-items: center;
   color: var(--primary-color);
+  z-index: 1;
 }
 
 .burger-menu-icon {
