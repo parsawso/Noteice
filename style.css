@@ -2,11 +2,13 @@
 
 /* Global Styles*/
 :root {
-  --primary-color: #333;
+  --background-color: hsl(202, 100%, 98%);
+  --primary-color: #14213d;
+  --secondary-color: #fca311;
   --light-color: #fff;
+  --shadow-color: #e0e0e0;
   --success-color: #40bb75;
   --error-color: #dc3b37;
-  --background-color: #f5fbff;
 }
 
 * {
@@ -31,14 +33,14 @@ body {
 .btn {
   border: none;
   padding: 2rem;
-  box-shadow: 0 0 2.5rem #cacaca;
+  box-shadow: 0 0 2.5rem var(--shadow-color);
   transition: 0.25s;
   cursor: pointer;
 }
 
 .btn-circle {
-  background-color: var(--light-color);
-  color: var(--primary-color);
+  background-color: var(--secondary-color);
+  color: var(--light-color);
   border-radius: 50%;
   padding: 2rem 2.2rem;
   position: fixed;
@@ -50,7 +52,6 @@ body {
 .btn-circle:hover {
   transform: scale(1.1);
   transition: 0.25s;
-  box-shadow: 0 0 2.5rem #acacac;
 }
 
 /* Title */
@@ -68,10 +69,16 @@ body {
   padding-left: 1rem;
 }
 
+.logo {
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+  border-radius: 50%;
+}
+
 /* top bar */
 .top-bar {
   background-color: var(--light-color);
-  box-shadow: 0 0 2.5rem #eeeeee;
+  box-shadow: 0 0 2.5rem var(--shadow-color);
   border-radius: 1rem;
   padding: 1.5rem 2rem;
   position: sticky;
@@ -85,6 +92,7 @@ body {
 }
 
 .burger-menu-icon {
+  color: inherit;
   cursor: pointer;
   border: none;
   position: relative;
@@ -129,7 +137,7 @@ header {
   align-items: center;
   margin: 3rem;
   padding: 1.5rem 2rem;
-  box-shadow: 0 0 2.5rem #eeeeee;
+  box-shadow: 0 0 2.5rem var(--shadow-color);
   transition: 1s ease-out;
 }
 
@@ -168,7 +176,7 @@ header {
 }
 
 .categories li:hover {
-  background-color: #eeeeee;
+  background-color: var(--shadow-color);
 }
 
 /* cards-section */
@@ -189,5 +197,5 @@ header {
   background-color: var(--light-color);
   width: 100%;
   border-radius: 1rem;
-  box-shadow: 0 0 2.5rem #dddddd;
+  box-shadow: 0 0 2.5rem var(--shadow-color);
 }
