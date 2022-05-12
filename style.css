@@ -185,11 +185,12 @@ header {
 }
 
 .card {
+  padding: .5rem;
   display: flex;
   flex-direction: column;
   border-style: solid;
   border-width: 0.75rem 0 0;
-  border-color: red;
+  border-color: var(--secondary-color);
   position: relative;
   background-color: var(--light-color);
   width: 100%;
@@ -198,17 +199,19 @@ header {
 }
 
 .card-header {
+  position: relative;
   font-size: 2rem;
   font-weight: 600;
-  padding: 1.5rem 1.5rem 1rem;
+  padding: 1rem;
   flex-basis: content;
 }
 
 .card-body {
-  padding: 1rem 1.5rem;
+  position: relative;
+  padding: 1rem;
   overflow: hidden;
   font-size: 1.5rem;
-  flex-basis: 13.5rem;
+  flex-basis: 13rem;
 }
 
 .card-footer {
@@ -217,7 +220,7 @@ header {
   flex-direction: row;
   align-items: center;
   justify-content: left;
-  position: absolute;
+  position: relative;
   bottom: 0;
   padding: 1rem;
 }
@@ -228,8 +231,7 @@ header {
   cursor: pointer;
   transition: 0.1s;
 }.delete-icon:hover {
-  transform: scale(1.1);
-  opacity: 100%;
+  opacity: 75%;
   transition: 0.1s;
 }
 
@@ -239,8 +241,7 @@ header {
   cursor: pointer;
   transition: 0.1s;
 }.edit-icon:hover {
-  transform: scale(1.1);
-  opacity: 100%;
+  opacity: 75%;
   transition: 0.1s;
 }
 
