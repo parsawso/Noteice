@@ -1,17 +1,17 @@
 const sidebar = document.getElementById('sidebar');
 const sidebarHeader = document.getElementById('sidebar-header');
 
-sidebar.style.width = '0';
-sidebarHeader.style.opacity = '0';
+sidebar.style.left = '-40rem';
+sidebar.style.boxShadow = 'none';
 
 function openSidebar() {
-    sidebar.style.width = '90%';
-    sidebarHeader.style.opacity = '1';
+    sidebar.style.left = '0';
+    sidebar.style.boxShadow = '0 0 100rem black';
 }
 
 function closeSidebar() {
-    sidebarHeader.style.opacity = '0';
-    sidebar.style.width = '0';
+    sidebar.style.left = '-40rem';
+    sidebar.style.boxShadow = 'none';
 }
 
 let prevScrollpos = window.pageYOffset;
