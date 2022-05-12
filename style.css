@@ -2,11 +2,11 @@
 
 /* Global Styles*/
 :root {
-  --background-color: hsl(202, 100%, 98%);
+  --background-color: #f5fbff;
   --primary-color: #14213d;
   --secondary-color: #fca311;
   --light-color: #fff;
-  --shadow-color: #e0e0e0;
+  --shadow-color: #dadada;
   --success-color: #40bb75;
   --error-color: #dc3b37;
 }
@@ -39,8 +39,8 @@ body {
 }
 
 .btn-circle {
-  background-color: var(--secondary-color);
-  color: var(--light-color);
+  background-color: var(--light-color);
+  color: var(--primary-color);
   border-radius: 50%;
   padding: 2rem 2.2rem;
   position: fixed;
