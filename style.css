@@ -76,7 +76,7 @@ body {
 }
 
 /* top bar */
-.top-bar {
+#top-bar {
   background-color: var(--light-color);
   box-shadow: 0 0 2.5rem var(--shadow-color);
   border-radius: 1rem;
@@ -89,6 +89,7 @@ body {
   align-items: center;
   color: var(--primary-color);
   z-index: 1;
+  transition: .1s;
 }
 
 .burger-menu-icon {
