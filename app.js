@@ -1,5 +1,4 @@
 const sidebar = document.getElementById('sidebar');
-const sidebarHeader = document.getElementById('sidebar-header');
 
 sidebar.style.left = '-40rem';
 sidebar.style.boxShadow = 'none';
@@ -23,4 +22,11 @@ window.onscroll = function() {
     document.getElementById("top-bar").style.top = "-6rem";
   }
   prevScrollpos = currentScrollPos;
+}
+
+// Open and close add notes
+const addNotesSection = document.getElementById('add-notes-section');
+
+function openAddNotes() {
+    addNotesSection.style.top = '0';
 }

@@ -254,3 +254,14 @@ header {
   position: absolute;
   right: 1.5rem;
 }
+
+/* adding notes */
+#adding-notes-page {
+  background-color: red;
+  z-index: 2;
+  position: fixed;
+  top: -50rem;
+  left: 0;
+  right: 0;
+  height: 50rem;
+}
