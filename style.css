@@ -185,7 +185,6 @@ header {
 }
 
 .card {
-  padding: .5rem;
   display: flex;
   flex-direction: column;
   border-style: solid;
@@ -202,19 +201,21 @@ header {
   position: relative;
   font-size: 2rem;
   font-weight: 600;
-  padding: 1rem;
+  padding: 1.5rem 1.5rem .5rem;
   flex-basis: content;
 }
 
 .card-body {
   position: relative;
-  padding: 1rem;
+  padding: .5rem 1.5rem;
   overflow: hidden;
+  text-overflow: ellipsis;
   font-size: 1.5rem;
   flex-basis: 13rem;
 }
 
 .card-footer {
+  box-shadow: 0 0 3rem var(--shadow-color);
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -222,7 +223,7 @@ header {
   justify-content: left;
   position: relative;
   bottom: 0;
-  padding: 1rem;
+  padding: 1.5rem 1.5rem 1.5rem;
 }
 
 .delete-icon {
