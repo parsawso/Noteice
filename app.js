@@ -28,5 +28,5 @@ window.onscroll = function() {
 const addNotesSection = document.getElementById('add-notes-section');
 
 function openAddNotes() {
-    addNotesSection.style.top = '0';
+    addNotesSection.style.top = '2rem';
 }

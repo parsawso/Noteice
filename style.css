@@ -257,12 +257,15 @@ header {
 }
 
 /* adding notes */
-#adding-notes-page {
+#add-notes-section {
+  border-radius: 1rem;
   background-color: red;
-  z-index: 2;
   position: fixed;
+  z-index: 2;
+  width: 45rem;
+  height: 45rem;
   top: -50rem;
-  left: 0;
-  right: 0;
-  height: 50rem;
+  right: 2rem;
+  left: 2rem;
+  transition: 0.3s ease-out;
 }
