@@ -22,9 +22,13 @@ html {
 }
 
 body {
+  font-family: "Fira Sans", sans-serif;
+}
+
+/* main body */
+#main-body {
   background-color: var(--background-color);
   color: var(--primary-color);
-  font-family: "Fira Sans", sans-serif;
   line-height: 1.6;
   padding: 3rem;
 }
