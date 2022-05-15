@@ -27,6 +27,7 @@ body {
 
 /* main body */
 #main-body {
+  position: absolute;
   background-color: var(--background-color);
   color: var(--primary-color);
   line-height: 1.6;
