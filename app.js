@@ -3,6 +3,7 @@ const mainBody = document.querySelector("#main-body");
 const sidebarButton = document.querySelector(".burger-menu-icon");
 const sidebar = document.getElementById("sidebar");
 const addNotesSection = document.getElementById("add-notes-section");
+const addNoteButton = document.querySelector("#add-note-button");
 
 // Default Values
 mainBody.style.filter = "brightness(1)";
@@ -44,11 +45,13 @@ function openAddNotes() {
   mainBody.style.height = "100%";
   mainBody.style.overflow = "hidden";
   mainBody.style.filter = "brightness(0.5)"
+  addNoteButton.style.bottom = "-10rem";
 }
 
 function closeAddNotes() {
   addNotesSection.style.top = "-50rem";
   mainBody.style.height = "auto";
   mainBody.style.overflow = "visible";
-  mainBody.style.filter = "brightness(1)"
+  mainBody.style.filter = "brightness(1)";
+  addNoteButton.style.bottom = "3rem";
 }
