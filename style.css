@@ -32,6 +32,7 @@ body {
   color: var(--primary-color);
   line-height: 1.6;
   padding: 3rem;
+  transition: 0.25s;
 }
 
 /* Title */
@@ -241,7 +242,7 @@ header {
 /* adding notes */
 #add-notes-section {
   border-radius: 1rem;
-  background-color: red;
+  background-color: var(--light-color);
   position: fixed;
   z-index: 2;
   width: 45rem;

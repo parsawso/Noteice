@@ -38,10 +38,12 @@ function openAddNotes() {
   addNotesSection.style.top = "2rem";
   mainBody.style.height = "100%";
   mainBody.style.overflow = "hidden";
+  mainBody.style.filter = "brightness(0.5)"
 }
 
 function closeAddNotes() {
   addNotesSection.style.top = "-50rem";
   mainBody.style.height = "auto";
   mainBody.style.overflow = "visible";
+  mainBody.style.filter = "brightness(1)"
 }
