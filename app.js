@@ -1,12 +1,17 @@
+// Define Values
 const mainBody = document.querySelector("#main-body");
 const sidebarButton = document.querySelector(".burger-menu-icon");
 const sidebar = document.getElementById("sidebar");
 const addNotesSection = document.getElementById("add-notes-section");
 
-// sidebar action
+// Default Values
+mainBody.style.filter = "brightness(1)";
+addNotesSection.style.top = "-50rem";
+mainBody.style.height = "auto";
+mainBody.style.overflow = "visible";
 sidebar.style.left = "-40rem";
-sidebar.style.boxShadow = "none";
 
+// sidebar action
 function openSidebar() {
   sidebar.style.left = "0";
   mainBody.style.height = "100%";
