@@ -252,7 +252,7 @@ header {
   transition: 0.3s ease-out;
 }
 
-.btn-circle {
+#add-note-button {
   border: none;
   box-shadow: 0 0 2.5rem var(--shadow-color);
   background-color: var(--light-color);
@@ -265,7 +265,7 @@ header {
   z-index: 1;
   transition: 0.25s;
   cursor: pointer;
-}.btn-circle:hover {
+} #add-note-button:hover {
   transform: scale(1.1);
   transition: 0.25s;
 }
