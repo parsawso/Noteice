@@ -34,29 +34,6 @@ body {
   padding: 3rem;
 }
 
-/*buttons*/
-.btn {
-  border: none;
-  padding: 2rem;
-  box-shadow: 0 0 2.5rem var(--shadow-color);
-  transition: 0.25s;
-  cursor: pointer;
-}
-
-.btn-circle {
-  background-color: var(--light-color);
-  color: var(--primary-color);
-  border-radius: 50%;
-  padding: 2rem 2.2rem;
-  position: fixed;
-  bottom: 3rem;
-  right: 3rem;
-  z-index: 1;
-}.btn-circle:hover {
-  transform: scale(1.1);
-  transition: 0.25s;
-}
-
 /* Title */
 .title-box {
   position: static;
@@ -273,4 +250,34 @@ header {
   right: 2rem;
   left: 2rem;
   transition: 0.3s ease-out;
+}
+
+.btn-circle {
+  border: none;
+  box-shadow: 0 0 2.5rem var(--shadow-color);
+  background-color: var(--light-color);
+  color: var(--primary-color);
+  border-radius: 50%;
+  padding: 2rem 2.2rem;
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+  z-index: 1;
+  transition: 0.25s;
+  cursor: pointer;
+}.btn-circle:hover {
+  transform: scale(1.1);
+  transition: 0.25s;
+}
+
+#close-button {
+  color: var(--primary-color);
+  background: none;
+  border: none;
+  padding: 2rem;
+  cursor: pointer;
+  transition: 0.2s;
+} #close-button:hover {
+  opacity: 50%;
+  transition: 0.2s;
 }

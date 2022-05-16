@@ -187,11 +187,15 @@
       </ul>
     </aside>
 
-    <button class="btn btn-circle" onclick="openAddNotes()">
+    <button class="btn-circle" onclick="openAddNotes()">
       <i class="fa-solid fa-plus fa-2x"></i>
     </button>
 
-    <div id="add-notes-section"></div>
+    <div id="add-notes-section">
+      <button id="close-button" onclick="closeAddNotes()">
+        <i class="fa-solid fa-xmark fa-3x"></i>
+      </button>
+    </div>
 
     <script src="app.js"></script>
   </body>

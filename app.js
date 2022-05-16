@@ -39,3 +39,9 @@ function openAddNotes() {
   mainBody.style.height = "100%";
   mainBody.style.overflow = "hidden";
 }
+
+function closeAddNotes() {
+  addNotesSection.style.top = "-50rem";
+  mainBody.style.height = "auto";
+  mainBody.style.overflow = "visible";
+}
