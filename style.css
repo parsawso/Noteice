@@ -99,7 +99,6 @@ header {
   top: 0;
   bottom: 0;
   width: 40rem;
-  /* box-shadow: 0 0 100rem black; */
   background: var(--background-color);
   overflow-x: hidden;
   overflow-y: scroll;

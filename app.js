@@ -9,16 +9,16 @@ sidebar.style.boxShadow = "none";
 
 function openSidebar() {
   sidebar.style.left = "0";
-  sidebar.style.boxShadow = "0 0 100rem black";
   mainBody.style.height = "100%";
   mainBody.style.overflow = "hidden";
+  mainBody.style.filter = "brightness(0.5)"
 }
 
 function closeSidebar() {
   sidebar.style.left = "-40rem";
-  sidebar.style.boxShadow = "none";
   mainBody.style.height = "auto";
   mainBody.style.overflow = "visible";
+  mainBody.style.filter = "brightness(1)"
 }
 
 //top bar action
