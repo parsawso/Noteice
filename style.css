@@ -299,8 +299,11 @@ header {
 
 .header-field {
   height:5rem;
+  font-size: 2rem;
+  font-weight: 600;
 }
 
 .body-field {
   height: 25rem;
+  font-size: 1.5rem;
 }
