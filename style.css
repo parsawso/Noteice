@@ -241,10 +241,11 @@ header {
 /* adding notes */
 #add-notes-section {
   display: flex;
+  align-items: flex-start;
   flex-direction: column;
   border-radius: 1rem;
   background-color: var(--background-color);
-  position: fixed;
+  position: absolute;
   z-index: 2;
   width: 45rem;
   height: fit-content;
@@ -279,10 +280,13 @@ header {
   border: none;
   padding: .5rem 1rem 1rem;
   cursor: pointer;
-  transition: 0.2s;
-} #close-button:hover {
+  transition: .2s;
   opacity: 50%;
-  transition: 0.2s;
+} #close-button:hover {
+  background: none;
+  opacity: 100%;
+  transition: .2s;
+  transform: scale(1.1);
 }
 
 .field {
@@ -293,17 +297,43 @@ header {
   border-radius: .5rem;
   width: 100%;
   height: 3rem;
-  padding: 1rem;
   margin: .5rem 0;
+  outline: none;
+  overflow: visible;
+} .field::placeholder {
+  font-size: 1.5rem;
+  font-weight: 400;
+  vertical-align: baseline;
+} .field:focus {
+  box-shadow: 0 0 5rem #cacaca;
 }
 
 .header-field {
   height:5rem;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 600;
+  padding: 1rem;
 }
 
 .body-field {
   height: 25rem;
   font-size: 1.5rem;
+  padding: 0 1rem;
+}
+
+.submit-note-btn {
+  position: relative;
+  background-color: var(--secondary-color);
+  box-shadow: .25rem .25rem .2rem var(--shadow-color);
+  width: 100%;
+  height: 5rem;
+  border: none;
+  border-radius: 1rem;
+  right: 0;
+  margin: .5rem 0 0;
+  cursor:pointer;
+  transition: .2s;
+} .submit-note-btn:hover {
+  transform: scale(1.015);
+  transition: .2s;
 }
