@@ -23,6 +23,7 @@ html {
 
 body {
   font-family: "Fira Sans", sans-serif;
+  background-color: var(--background-color);
 }
 
 /* main body */
@@ -161,7 +162,7 @@ header {
   position: relative;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  grid-template-rows: repeat(10, 25rem);
+  grid-template-rows: 25rem;
   row-gap: 2rem;
   padding: 2rem 0;
 }
