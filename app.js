@@ -1,8 +1,8 @@
 // Define Values
 const mainBody = document.querySelector("#main-body");
 const sidebarButton = document.querySelector(".burger-menu-icon");
-const sidebar = document.getElementById("sidebar");
-const addNotesSection = document.getElementById("add-notes-section");
+const sidebar = document.querySelector("#sidebar");
+const addNotesSection = document.querySelector("#add-notes-section");
 const addNoteButton = document.querySelector("#add-note-button");
 
 // Default Values
