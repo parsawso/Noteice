@@ -19,14 +19,16 @@ function openSidebar() {
   sidebar.style.left = "0";
   mainBody.style.height = "100%";
   mainBody.style.overflow = "hidden";
-  mainBody.style.filter = "brightness(0.5)"
+  mainBody.style.filter = "brightness(0.5)";
+  addNoteButton.style.bottom = "-10rem";
 }
 
 function closeSidebar() {
   sidebar.style.left = "-40rem";
   mainBody.style.height = "auto";
   mainBody.style.overflow = "visible";
-  mainBody.style.filter = "brightness(1)"
+  mainBody.style.filter = "brightness(1)";
+  addNoteButton.style.bottom = "3rem";
 }
 
 //top bar action
@@ -58,7 +60,7 @@ function closeAddNotes() {
   addNoteButton.style.bottom = "3rem";
 }
 
-// collecting data from adding note form
+// add note card
 submitNoteBTN.addEventListener("click",() => {
   if (document.querySelector(".header-field").value==="" || document.querySelector(".body-field").value==="") {
     alert("Please fill all the fields")
@@ -79,7 +81,7 @@ submitNoteBTN.addEventListener("click",() => {
     <i class="fa-solid fa-pen fa-2x edit-icon"></i>
     <section class="card-category">Category</section>
   </section>
-</div>`);
+  </div>`);
 
   closeAddNotes();
 })
