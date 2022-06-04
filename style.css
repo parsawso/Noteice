@@ -149,12 +149,34 @@ header {
 .categories li {
   cursor: pointer;
   font-size: 2rem;
-  padding: 1rem 0 1rem 3rem;
+  padding: 1rem 1rem 1rem 3rem;
   border-radius: 1rem;
+  display: flex;
+  align-items: center;
+}.categories li:hover {
+  background-color: var(--shadow-color);
 }
 
-.categories li:hover {
-  background-color: var(--shadow-color);
+.categories li .edit-icon {
+  position: absolute;
+  right: 1rem;
+  display: none;
+}
+
+.categories li .delete-icon {
+  display: none;
+}
+
+.add-category-field {
+  outline: none;
+  padding: 0 1rem;
+  background: none;
+  font-size: 2rem;
+  border: none;
+}
+
+.categories li:last-child {
+  display: none;
 }
 
 /* cards-section */
