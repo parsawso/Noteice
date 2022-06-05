@@ -80,10 +80,11 @@ body {
   border: none;
   position: relative;
   background-color: transparent;
-  transition: 0.2s;
+  transition: 0.1s;
+  opacity: 50%;
 }.burger-menu-icon:hover {
-  transform: scale(1.1);
-  transition: 0.2s;
+  opacity: 75%;
+  transition: 0.1s;
 }
 
 header {
@@ -128,14 +129,17 @@ header {
 }
 
 .pen-icon {
+  background: none;
+  border: none;
   position: absolute;
-  right: 3rem;
+  right: 1.5rem;
   background-color: transparent;
   cursor: pointer;
-  transition: 0.2s;
+  transition: 0.1s;
+  opacity: 50%;
 }.pen-icon:hover {
-  transform: scale(1.1);
-  transition: 0.2s;
+  opacity: 75%;
+  transition: 0.1s;
 }
 
 .categories {
