@@ -128,7 +128,7 @@ header {
   left: 3rem;
 }
 
-.pen-icon {
+.edit-categories-btn {
   background: none;
   border: none;
   position: absolute;
@@ -137,7 +137,7 @@ header {
   cursor: pointer;
   transition: 0.1s;
   opacity: 50%;
-}.pen-icon:hover {
+}.edit-categories-btn:hover {
   opacity: 75%;
   transition: 0.1s;
 }
