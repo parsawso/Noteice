@@ -128,20 +128,6 @@ header {
   left: 3rem;
 }
 
-.edit-categories-btn {
-  background: none;
-  border: none;
-  position: absolute;
-  right: 1.5rem;
-  background-color: transparent;
-  cursor: pointer;
-  transition: 0.1s;
-  opacity: 50%;
-}.edit-categories-btn:hover {
-  opacity: 75%;
-  transition: 0.1s;
-}
-
 .categories {
   list-style: none;
   position: relative;
@@ -181,7 +167,7 @@ header {
 
 .add-category-field {
   outline: none;
-  padding: 0 0 0 1.2rem;
+  padding: 0 0 0 1.25rem;
   background: none;
   font-size: 2rem;
   border: none;
@@ -193,10 +179,6 @@ header {
   padding: 1rem 1rem 1rem 3rem;
   display: flex;
   align-items: center;
-}
-
-.toggle {
-  display: none;
 }
 
 /* cards-section */
