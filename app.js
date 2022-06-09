@@ -6,6 +6,10 @@ const addNotesSection = document.querySelector("#add-notes-section");
 const addNoteButton = document.querySelector("#add-note-button");
 const submitNoteBTN = document.querySelector(".submit-note-btn");
 const cardsSection = document.querySelector(".cards-section");
+const addCategoryBTN = document.querySelector(".add-category-btn");
+const addCategorySection = document.querySelector(".add-category-section");
+const categories = document.querySelector(".categories");
+const addCategoryLi = document.querySelector(".add-category-li")
 
 // Default Values
 mainBody.style.filter = "brightness(1)";
@@ -63,7 +67,7 @@ function closeAddNotes() {
 // add note card
 submitNoteBTN.addEventListener("click",() => {
   if (document.querySelector(".header-field").value==="" || document.querySelector(".body-field").value==="") {
-    alert("Please fill all the fields")
+    alert("Please fill all the fields");
   }
   
   const noteHeader = document.querySelector(".header-field").value;
@@ -84,4 +88,14 @@ submitNoteBTN.addEventListener("click",() => {
   </div>`);
 
   closeAddNotes();
+})
+
+// add category
+addCategoryBTN.addEventListener("click" , () => {
+  const categoryName = document.querySelector(".add-category-field").value;
+  categories.innerHTML += (`<li>
+  <i class="fa-solid fa-trash delete-icon"></i>${categoryName}
+  <i class="fa-solid fa-pen edit-icon"></i>
+  </li>`)
+  document.querySelector(".add-category-field").value = null;
 })
