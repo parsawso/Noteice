@@ -166,18 +166,22 @@ header {
 }
 
 .add-category-field {
+  font-family: "Fira Sans", sans-serif;
+  resize: none;
   outline: none;
-  padding: 0 0 0 1.25rem;
+  height: 5rem;
+  padding: 1.25rem 1rem 0;
   background: none;
   font-size: 2rem;
   border: none;
+  margin-left: 1rem;
 }
 
 .add-category-section {
-  position: relative;
-  padding: 1rem 1rem 1rem 6rem;
   display: flex;
   align-items: center;
+  margin-top: 0;
+  margin-left: 6rem;
 }
 
 /* cards-section */
