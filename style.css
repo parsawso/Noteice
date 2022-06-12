@@ -175,6 +175,8 @@ header {
   font-size: 2rem;
   border: none;
   margin-left: .45rem;
+} .add-category-field::placeholder {
+  opacity: 50%;
 }
 
 .add-category-section {
