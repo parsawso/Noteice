@@ -134,7 +134,7 @@ header {
   display: flex;
   flex-direction: column;
   row-gap: 1rem;
-  margin: 3rem;
+  margin: 2rem 1.5rem 1rem;
 }
 
 .categories li {
