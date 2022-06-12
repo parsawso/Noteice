@@ -314,6 +314,8 @@ header {
 }
 
 .field {
+  font-family: "Fira Sans", sans-serif;
+  resize: none;
   position:relative;
   border: none;
   background-color: var(--light-color);
@@ -336,13 +338,13 @@ header {
   height:5rem;
   font-size: 1.5rem;
   font-weight: 600;
-  padding: 1rem;
+  padding: 1.6rem;
 }
 
 .body-field {
   height: 25rem;
   font-size: 1.5rem;
-  padding: 0 1rem;
+  padding: 1.5rem;
 }
 
 .submit-note-btn {
