@@ -354,6 +354,7 @@ header {
 }
 
 .submit-note-btn {
+  font-family: "Fira Sans", sans-serif;
   position: relative;
   background-color: var(--secondary-color);
   box-shadow: .25rem .25rem .2rem var(--shadow-color);
