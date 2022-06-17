@@ -99,3 +99,9 @@ function submitCategory() {
   </li>`)
   document.querySelector(".add-category-field").value = null;
 }
+
+document.onkeydown = function(){
+  if(window.event.keyCode=='13' && document.activeElement === document.querySelector(".add-category-field")){
+    submitCategory();
+  }
+}
