@@ -91,11 +91,11 @@ submitNoteBTN.addEventListener("click",() => {
 })
 
 // add category
-addCategoryBTN.addEventListener("click" , () => {
+function submitCategory() {
   const categoryName = document.querySelector(".add-category-field").value;
   categories.innerHTML += (`<li>
   <i class="fa-solid fa-trash delete-icon"></i>${categoryName}
   <i class="fa-solid fa-pen edit-icon"></i>
   </li>`)
   document.querySelector(".add-category-field").value = null;
-})
+}
