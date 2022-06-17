@@ -65,7 +65,7 @@ function closeAddNotes() {
 }
 
 // add note card
-submitNoteBTN.addEventListener("click",() => {
+function submitNote() {
   if (document.querySelector(".header-field").value==="" || document.querySelector(".body-field").value==="") {
     alert("Please fill all the fields");
   }
@@ -88,7 +88,7 @@ submitNoteBTN.addEventListener("click",() => {
   </div>`);
 
   closeAddNotes();
-})
+}
 
 // add category
 function submitCategory() {
