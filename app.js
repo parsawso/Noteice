@@ -54,6 +54,7 @@ function openAddNotes() {
   mainBody.style.overflow = "hidden";
   mainBody.style.filter = "brightness(0.5)"
   addNoteButton.style.bottom = "-10rem";
+  document.querySelector(".header-field").focus();
 }
 
 function closeAddNotes() {
@@ -101,7 +102,7 @@ function submitCategory() {
 }
 
 document.onkeydown = function(){
-  if(window.event.keyCode=='13' && document.activeElement === document.querySelector(".add-category-field")){
+  if(window.event.keyCode=="13" && document.activeElement === document.querySelector(".add-category-field")){
     submitCategory();
   }
 }
