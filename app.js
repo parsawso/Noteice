@@ -83,7 +83,6 @@ function submitNote() {
   </section>
   <section class="card-footer">
     <i class="fa-solid fa-trash fa-2x delete-icon"></i>
-    <i class="fa-solid fa-pen fa-2x edit-icon"></i>
     <section class="card-category">Category</section>
   </section>
   </div>`);
@@ -96,7 +95,6 @@ function submitCategory() {
   const categoryName = document.querySelector(".add-category-field").value;
   categories.innerHTML += (`<li>
   <i class="fa-solid fa-trash delete-icon"></i>${categoryName}
-  <i class="fa-solid fa-pen edit-icon"></i>
   </li>`)
   document.querySelector(".add-category-field").value = null;
 }

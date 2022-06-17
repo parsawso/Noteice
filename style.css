@@ -148,11 +148,6 @@ header {
   background-color: var(--shadow-color);
 }
 
-.categories li .edit-icon {
-  position: absolute;
-  right: 1rem;
-}
-
 .add-category-btn {
   padding: 0 0 0 .25rem;
   background: none;
@@ -244,16 +239,6 @@ header {
   cursor: pointer;
   transition: 0.1s;
 }.delete-icon:hover {
-  opacity: 60%;
-  transition: 0.1s;
-}
-
-.edit-icon {
-  opacity: 15%;
-  padding: .5rem 1.5rem .5rem .5rem;
-  cursor: pointer;
-  transition: 0.1s;
-}.edit-icon:hover {
   opacity: 60%;
   transition: 0.1s;
 }
