@@ -106,3 +106,16 @@ document.onkeydown = function(){
     submitCategory();
   }
 }
+
+//remove category
+categoriesSection.addEventListener("click" , (e) => {
+  if (e.target.classList[1] === "fa-trash") {
+    categories.forEach((item) => {
+      if(e.target.parentElement.id === item){
+        categories.splice(categories.indexOf(item),1);
+      }
+    })
+    e.target.parentElement.remove();
+    e.target.innerHTML
+  }
+})
