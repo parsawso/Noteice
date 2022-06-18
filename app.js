@@ -8,8 +8,7 @@ const submitNoteBTN = document.querySelector(".submit-note-btn");
 const cardsSection = document.querySelector(".cards-section");
 const addCategoryBTN = document.querySelector(".add-category-btn");
 const addCategorySection = document.querySelector(".add-category-section");
-const categories = document.querySelector(".categories");
-const addCategoryLi = document.querySelector(".add-category-li")
+const categoriesSection = document.querySelector(".categories");
 
 // Default Values
 mainBody.style.filter = "brightness(1)";
@@ -91,14 +90,17 @@ function submitNote() {
 }
 
 // add category
+const categories = [];
+
 function submitCategory() {
   const categoryName = document.querySelector(".add-category-field").value;
-  categories.innerHTML += (`<li>
-  <i class="fa-solid fa-trash delete-icon"></i>${categoryName}
-  </li>`)
+  categoriesSection.innerHTML += (`<li id="${categoryName}">
+  <i class="fa-solid fa-trash delete-icon"></i>${categoryName}</li>`)
+  categories.push(categoryName);
   document.querySelector(".add-category-field").value = null;
 }
 
+// add category by pressing enter
 document.onkeydown = function(){
   if(window.event.keyCode=="13" && document.activeElement === document.querySelector(".add-category-field")){
     submitCategory();
