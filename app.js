@@ -68,6 +68,7 @@ function closeAddNotes() {
 function submitNote() {
   if (document.querySelector(".header-field").value==="" || document.querySelector(".body-field").value==="") {
     alert("Please fill all the fields");
+    return;
   }
   
   const noteHeader = document.querySelector(".header-field").value;
