@@ -75,7 +75,7 @@ function closeAddNotes() {
 
 // add note card
 function submitNote() {
-  if (document.querySelector(".header-field").value==="" || document.querySelector(".body-field").value==="") {
+  if (document.querySelector(".header-field").value==="" || document.querySelector(".body-field").value==="" || selectedCategoriesDropdown.innerText === "Select Category") {
     alert("Please fill all the fields");
     return;
   }
@@ -86,13 +86,17 @@ function submitNote() {
   const noteBody = document.querySelector(".body-field").value;
   document.querySelector(".body-field").value = null;
 
+  const cardCategoryName = selectedCategoriesDropdown.innerText;
+  selectedCategoriesDropdown.innerText = "Select Category";
+  selectedCategoriesDropdown.style.opacity = "30%";
+
   cardsSection.innerHTML += (`<div class="card">
   <section class="card-header">${noteHeader}</section>
   <section class="card-body">${noteBody}
   </section>
   <section class="card-footer">
     <i class="fa-solid fa-trash fa-2x delete-icon"></i>
-    <section class="card-category">Category</section>
+    <section class="card-category">${cardCategoryName}</section>
   </section>
   </div>`);
 
