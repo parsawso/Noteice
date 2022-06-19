@@ -21,6 +21,7 @@ addNotesSection.style.top = "-50rem";
 mainBody.style.height = "auto";
 mainBody.style.overflow = "visible";
 sidebar.style.left = "-40rem";
+let dropdownIsClose = true;
 
 // sidebar action
 function openSidebar() {
@@ -67,6 +68,9 @@ function closeAddNotes() {
   mainBody.style.overflow = "visible";
   mainBody.style.filter = "brightness(1)";
   addNoteButton.style.bottom = "3rem";
+  caret.style.transform = "rotate(90deg)";
+  menuCategoriesDropdown.style.display = "none";
+  dropdownIsClose = true;
 }
 
 // add note card
@@ -150,7 +154,6 @@ categoriesSection.addEventListener("click" , (e) => {
 })
 
 //open and close dropdown menu
-let dropdownIsClose = true;
 selectCategoriesDropdown.addEventListener("click",()=> {
   if(dropdownIsClose == true) {
     caret.style.transform = "rotate(0deg)";
