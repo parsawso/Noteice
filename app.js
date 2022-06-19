@@ -94,6 +94,13 @@ const categories = [];
 
 function submitCategory() {
   const categoryName = document.querySelector(".add-category-field").value;
+  for (let item of categories) {
+    if(categoryName === item){
+      document.querySelector(".add-category-field").value = null;
+      alert(`A category named ${categoryName} already exists. Please select another name.`);
+      return;
+    }
+  }
   categoriesSection.innerHTML += (`<li id="${categoryName}">
   <i class="fa-solid fa-trash delete-icon"></i>${categoryName}</li>`)
   categories.push(categoryName);
