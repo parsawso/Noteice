@@ -25,17 +25,25 @@ body {
   position: relative;
   font-family: "Fira Sans", sans-serif;
   background-color: var(--background-color);
+  color: var(--primary-color);
+  line-height: 1.6;
+  padding: 3rem;
+  transition: 0.25s;
 } body::-webkit-scrollbar { 
   display: none;
 }
 
 /* main body */
-#main-body {
-  background-color: var(--background-color);
-  color: var(--primary-color);
-  line-height: 1.6;
-  padding: 3rem;
-  transition: 0.25s;
+.brightness-glass {
+  background-color: black;
+  position: fixed;
+  z-index: 2;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  opacity: 50%;
+  display: none;
 }
 
 /* Title */
@@ -98,7 +106,7 @@ header {
 /* aside */
 #sidebar {
   position: fixed;
-  z-index: 1;
+  z-index: 3;
   left: 0;
   top: 0;
   bottom: 0;
@@ -265,8 +273,8 @@ header {
   flex-direction: column;
   border-radius: 1rem;
   background-color: var(--background-color);
-  position: absolute;
-  z-index: 2;
+  position: fixed;
+  z-index: 3;
   width: 45rem;
   height: fit-content;
   top: -60rem;
