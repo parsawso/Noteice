@@ -113,6 +113,11 @@ function submitCategory() {
   categoriesSection.innerHTML += (`<li id="${categoryName}">
   <i class="fa-solid fa-trash delete-icon"></i>${categoryName}</li>`)
   categories.push(categoryName);
+  //add category to dropdown menu
+  const newLiForDropdown = document.createElement('li');
+  newLiForDropdown.innerText = categoryName;
+  menuCategoriesDropdown.appendChild(newLiForDropdown);
+  //
   document.querySelector(".add-category-field").value = null;
 }
 
