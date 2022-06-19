@@ -13,6 +13,7 @@ const caret = document.querySelector(".caret");
 const menuCategoriesDropdown = document.querySelector(".menu_categories-dropdown");
 const selectCategoriesDropdown = document.querySelector(".select_categories-dropdown");
 const selectedCategoriesDropdown = document.querySelector(".selected_categories-dropdown");
+const dropdownItems = menuCategoriesDropdown.getElementsByTagName("li");
 
 // Default Values
 mainBody.style.filter = "brightness(1)";
@@ -136,6 +137,14 @@ categoriesSection.addEventListener("click" , (e) => {
         categories.splice(categories.indexOf(item),1);
       }
     })
+    //remove category from categories dropdown menu
+    const categoryName = e.target.parentElement.innerText;
+    for(var counter=0 ; counter<dropdownItems.length ; ++counter) {
+      if (dropdownItems[counter].innerText === categoryName) {
+        dropdownItems[counter].remove();
+      }
+    }
+    //
     e.target.parentElement.remove();
   }
 })
