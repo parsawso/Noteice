@@ -13,39 +13,24 @@
     <title>Document</title>
   </head>
   <body>
-    <main id="main-body">
-      <div class="title-box">
-        <i class="fa-solid fa-circle-check fa-3x logo"></i>
-        <h1 class="title">Noteice</h1>
-      </div>
-      <div id="top-bar">
-        <nav>
-          <button class="burger-menu-icon" onclick="openSidebar()">
-            <i class="fa-solid fa-bars fa-2x"></i>
-          </button>
-        </nav>
-        <header>
-          <h2>All Categories</h2>
-        </header>
-      </div>
+    <div class="brightness-glass"></div>
+    <div class="title-box">
+       <i class="fa-solid fa-circle-check fa-3x logo"></i>
+       <h1 class="title">Noteice</h1>
+    </div>
+     <div id="top-bar">
+      <nav>
+         <button class="burger-menu-icon" onclick="openSidebar()">
+           <i class="fa-solid fa-bars fa-2x"></i>
+         </button>
+      </nav>
+       <header>
+        <h2>All Categories</h2>
+      </header>
+    </div>
 
-      <div class="cards-section">
-        <div class="card">
-          <section class="card-header">HEADER</section>
-          <section class="card-body">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum
-            suscipit, voluptatum tenetur odio dolores adipisci cumque natus
-            praesentium molestiae nulla, nam repellat dignissimos corrupti
-            voluptas. Quos autem temporibus iusto doloremque.asdfasdfasdf asdf
-            asdfas dfa sdf asdf asdf
-          </section>
-          <section class="card-footer">
-            <i class="fa-solid fa-trash fa-2x delete-icon"></i>
-            <section class="card-category">Category</section>
-          </section>
-        </div>
-      </div>
-    </main>
+    <div class="cards-section">
+    </div>
 
     <aside id="sidebar">
       <div id="sidebar-header">
@@ -55,12 +40,6 @@
         <h2 id="sidebar-title">My Categories</h2>
       </div>
       <ul class="categories">
-        <li>
-          <i class="fa-solid fa-trash delete-icon"></i>Bussiness
-        </li>
-        <li>
-          <i class="fa-solid fa-trash delete-icon"></i>Life
-        </li>
       </ul>
       <div class="add-category-section">
         <button class="add-category-btn" onclick="submitCategory()">
@@ -96,8 +75,6 @@
           <i class="fa-solid fa-caret-down caret"></i>
         </div>
         <ul class="menu_categories-dropdown">
-          <li>Bussiness</li>
-          <li>Life</li>
         </ul>
       </div>
       <button class="submit-note-btn" onclick="submitNote()">ADD NOTE</button>
