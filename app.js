@@ -137,7 +137,6 @@ categoriesSection.addEventListener("click" , (e) => {
       }
     })
     e.target.parentElement.remove();
-    e.target.innerHTML
   }
 })
 
