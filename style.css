@@ -24,6 +24,8 @@ html {
 body {
   font-family: "Fira Sans", sans-serif;
   background-color: var(--background-color);
+} body::-webkit-scrollbar { 
+  display: none;
 }
 
 /* main body */
@@ -106,6 +108,8 @@ header {
   overflow-y: scroll;
   transition: 0.3s ease-out;
   white-space: nowrap;
+} #sidebar::-webkit-scrollbar { 
+  display: none;
 }
 
 #sidebar-header {
@@ -394,7 +398,11 @@ header {
   z-index: 3;
   position: absolute;
   width: 100%;
+  max-height: 23rem;
+  overflow-y: scroll;
   top: 4.1rem;
+} .menu_categories-dropdown::-webkit-scrollbar { 
+  display: none;
 }
 
 .menu_categories-dropdown li {
