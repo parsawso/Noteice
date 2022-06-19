@@ -9,6 +9,9 @@ const cardsSection = document.querySelector(".cards-section");
 const addCategoryBTN = document.querySelector(".add-category-btn");
 const addCategorySection = document.querySelector(".add-category-section");
 const categoriesSection = document.querySelector(".categories");
+const caret = document.querySelector(".caret");
+const menuCategoriesDropdown = document.querySelector(".menu_categories-dropdown");
+const selectCategoriesDropdown = document.querySelector(".select_categories-dropdown");
 
 // Default Values
 mainBody.style.filter = "brightness(1)";
@@ -129,5 +132,20 @@ categoriesSection.addEventListener("click" , (e) => {
     })
     e.target.parentElement.remove();
     e.target.innerHTML
+  }
+})
+
+//open and close dropdown menu
+let dropdownIsClose = true;
+selectCategoriesDropdown.addEventListener("click",()=> {
+  if(dropdownIsClose == true) {
+    caret.style.transform = "rotate(0deg)";
+    menuCategoriesDropdown.style.display = "flex";
+    dropdownIsClose = false;
+  }
+  else if(dropdownIsClose == false) {
+    caret.style.transform = "rotate(90deg)";
+    menuCategoriesDropdown.style.display = "none";
+    dropdownIsClose = true;
   }
 })
