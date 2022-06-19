@@ -94,6 +94,10 @@ function submitNote() {
 const categories = [];
 
 function submitCategory() {
+  if (document.querySelector(".add-category-field").value==="" || document.querySelector(".add-category-field").value===null) {
+    alert("Please write a category name.");
+    return;
+  }
   const categoryName = document.querySelector(".add-category-field").value;
   for (let item of categories) {
     if(categoryName === item){
