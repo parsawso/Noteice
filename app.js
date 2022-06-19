@@ -12,6 +12,7 @@ const categoriesSection = document.querySelector(".categories");
 const caret = document.querySelector(".caret");
 const menuCategoriesDropdown = document.querySelector(".menu_categories-dropdown");
 const selectCategoriesDropdown = document.querySelector(".select_categories-dropdown");
+const selectedCategoriesDropdown = document.querySelector(".selected_categories-dropdown");
 
 // Default Values
 mainBody.style.filter = "brightness(1)";
@@ -144,6 +145,16 @@ selectCategoriesDropdown.addEventListener("click",()=> {
     dropdownIsClose = false;
   }
   else if(dropdownIsClose == false) {
+    caret.style.transform = "rotate(90deg)";
+    menuCategoriesDropdown.style.display = "none";
+    dropdownIsClose = true;
+  }
+})
+
+//select from categories in the dropdown
+menuCategoriesDropdown.addEventListener("click",(e) => {
+  if(e.target.nodeName === "LI") {
+    selectedCategoriesDropdown.innerText = e.target.innerText;
     caret.style.transform = "rotate(90deg)";
     menuCategoriesDropdown.style.display = "none";
     dropdownIsClose = true;
