@@ -323,6 +323,8 @@ header {
   outline: none;
   overflow: visible;
 } .field::placeholder {
+  color: var(--primary-color);
+  opacity: 30%;
   font-size: 1.5rem;
   font-weight: 400;
   vertical-align: baseline;
@@ -363,7 +365,7 @@ header {
 
 /* Categories Dropdown Menu */
 .categories-dropdown {
-  width: 15rem;
+  width: 17rem;
   font-size: 1.5rem;
   position: relative;
   display: flex;
@@ -379,6 +381,10 @@ header {
   display: flex;
   justify-content: space-between;
   cursor: pointer;
+}
+
+.selected_categories-dropdown {
+  opacity: 30%;
 }
 
 .caret {

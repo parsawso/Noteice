@@ -171,6 +171,7 @@ selectCategoriesDropdown.addEventListener("click",()=> {
 menuCategoriesDropdown.addEventListener("click",(e) => {
   if(e.target.nodeName === "LI") {
     selectedCategoriesDropdown.innerText = e.target.innerText;
+    selectedCategoriesDropdown.style.opacity = "100%";
     caret.style.transform = "rotate(90deg)";
     menuCategoriesDropdown.style.display = "none";
     dropdownIsClose = true;
