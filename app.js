@@ -17,18 +17,22 @@ const dropdownItems = menuCategoriesDropdown.getElementsByTagName("li");
 
 // Default Values
 addNotesSection.style.top = "-60rem";
-sidebar.style.left = "-40rem";
+sidebar.style.left = "-50rem";
+brightnessGlass.style.display = "none";
+sidebar.style.boxShadow = "1rem 0 1rem var(--shadow-color)"
 let dropdownIsClose = true;
 
 // sidebar action
 function openSidebar() {
   sidebar.style.left = "0";
+  sidebar.style.boxShadow = "none"
   brightnessGlass.style.display = "block";
   addNoteButton.style.bottom = "-10rem";
 }
 
 function closeSidebar() {
-  sidebar.style.left = "-40rem";
+  sidebar.style.left = "-50rem";
+  sidebar.style.boxShadow = "1rem 0 1rem var(--shadow-color)"
   brightnessGlass.style.display = "none";
   addNoteButton.style.bottom = "3rem";
 }
