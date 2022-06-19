@@ -22,6 +22,7 @@ html {
 }
 
 body {
+  position: relative;
   font-family: "Fira Sans", sans-serif;
   background-color: var(--background-color);
 } body::-webkit-scrollbar { 
@@ -30,7 +31,6 @@ body {
 
 /* main body */
 #main-body {
-  position: absolute;
   background-color: var(--background-color);
   color: var(--primary-color);
   line-height: 1.6;
@@ -417,4 +417,13 @@ header {
   border-radius: .5rem;
 } .menu_categories-dropdown li:hover {
   background-color: var(--shadow-color);
+}
+
+/* Footer */
+.footer {
+  background-color: var(--background-color);
+  position: relative;
+  width: 100%;
+  bottom: 0;
+  height: 6rem;
 }
