@@ -1,5 +1,5 @@
 // Define Values
-const mainBody = document.querySelector("#main-body");
+const brightnessGlass = document.querySelector(".brightness-glass");
 const sidebarButton = document.querySelector(".burger-menu-icon");
 const sidebar = document.querySelector("#sidebar");
 const addNotesSection = document.querySelector("#add-notes-section");
@@ -16,27 +16,20 @@ const selectedCategoriesDropdown = document.querySelector(".selected_categories-
 const dropdownItems = menuCategoriesDropdown.getElementsByTagName("li");
 
 // Default Values
-mainBody.style.filter = "brightness(1)";
 addNotesSection.style.top = "-60rem";
-mainBody.style.height = "auto";
-mainBody.style.overflow = "visible";
 sidebar.style.left = "-40rem";
 let dropdownIsClose = true;
 
 // sidebar action
 function openSidebar() {
   sidebar.style.left = "0";
-  mainBody.style.height = "100%";
-  mainBody.style.overflow = "hidden";
-  mainBody.style.filter = "brightness(0.5)";
+  brightnessGlass.style.display = "block";
   addNoteButton.style.bottom = "-10rem";
 }
 
 function closeSidebar() {
   sidebar.style.left = "-40rem";
-  mainBody.style.height = "auto";
-  mainBody.style.overflow = "visible";
-  mainBody.style.filter = "brightness(1)";
+  brightnessGlass.style.display = "none";
   addNoteButton.style.bottom = "3rem";
 }
 
@@ -55,18 +48,14 @@ window.onscroll = function () {
 // Open and close add notes
 function openAddNotes() {
   addNotesSection.style.top = "2rem";
-  mainBody.style.height = "100%";
-  mainBody.style.overflow = "hidden";
-  mainBody.style.filter = "brightness(0.5)"
+  brightnessGlass.style.display = "block";
   addNoteButton.style.bottom = "-10rem";
   document.querySelector(".header-field").focus();
 }
 
 function closeAddNotes() {
   addNotesSection.style.top = "-60rem";
-  mainBody.style.height = "auto";
-  mainBody.style.overflow = "visible";
-  mainBody.style.filter = "brightness(1)";
+  brightnessGlass.style.display = "none";
   addNoteButton.style.bottom = "3rem";
   caret.style.transform = "rotate(90deg)";
   menuCategoriesDropdown.style.display = "none";
