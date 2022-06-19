@@ -17,7 +17,7 @@ const dropdownItems = menuCategoriesDropdown.getElementsByTagName("li");
 
 // Default Values
 mainBody.style.filter = "brightness(1)";
-addNotesSection.style.top = "-50rem";
+addNotesSection.style.top = "-60rem";
 mainBody.style.height = "auto";
 mainBody.style.overflow = "visible";
 sidebar.style.left = "-40rem";
@@ -63,7 +63,7 @@ function openAddNotes() {
 }
 
 function closeAddNotes() {
-  addNotesSection.style.top = "-50rem";
+  addNotesSection.style.top = "-60rem";
   mainBody.style.height = "auto";
   mainBody.style.overflow = "visible";
   mainBody.style.filter = "brightness(1)";
