@@ -6,6 +6,7 @@ const addNotesSection = document.querySelector("#add-notes-section");
 const addNoteButton = document.querySelector("#add-note-button");
 const submitNoteBTN = document.querySelector(".submit-note-btn");
 const cardsSection = document.querySelector(".cards-section");
+const card = document.querySelector(".card");
 const addCategoryBTN = document.querySelector(".add-category-btn");
 const addCategorySection = document.querySelector(".add-category-section");
 const categoriesSection = document.querySelector(".categories");
@@ -63,6 +64,8 @@ function closeAddNotes() {
   addNoteButton.style.bottom = "3rem";
   caret.style.transform = "rotate(90deg)";
   menuCategoriesDropdown.style.display = "none";
+  selectedCategoriesDropdown.innerText = "Select Category";
+  selectedCategoriesDropdown.style.opacity = "30%";
   dropdownIsClose = true;
 }
 
