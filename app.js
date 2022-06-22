@@ -17,11 +17,16 @@ const selectedCategoriesDropdown = document.querySelector(".selected_categories-
 const dropdownItems = menuCategoriesDropdown.getElementsByTagName("li");
 
 // Default Values
-addNotesSection.style.top = "-60rem";
-sidebar.style.left = "-50rem";
-brightnessGlass.style.display = "none";
-sidebar.style.boxShadow = "1rem 0 1rem var(--shadow-color)"
-let dropdownIsClose = true;
+  //close add notes section
+  addNotesSection.style.top = "-60rem";
+  //close sidebar
+  sidebar.style.left = "-50rem";
+  //close brightness glass
+  brightnessGlass.style.display = "none";
+  //create sidebar boxshadow
+  sidebar.style.boxShadow = "1rem 0 1rem var(--shadow-color)"
+  //dropdown is close
+  let dropdownIsClose = true;
 
 // sidebar action
 function openSidebar() {
@@ -30,7 +35,6 @@ function openSidebar() {
   brightnessGlass.style.display = "block";
   addNoteButton.style.bottom = "-10rem";
 }
-
 function closeSidebar() {
   sidebar.style.left = "-50rem";
   sidebar.style.boxShadow = "1rem 0 1rem var(--shadow-color)"
@@ -38,7 +42,7 @@ function closeSidebar() {
   addNoteButton.style.bottom = "3rem";
 }
 
-//top bar action
+//sticky top bar when scroll up
 let prevScrollpos = window.pageYOffset;
 window.onscroll = function () {
   let currentScrollPos = window.pageYOffset;
@@ -62,30 +66,33 @@ function closeAddNotes() {
   addNotesSection.style.top = "-60rem";
   brightnessGlass.style.display = "none";
   addNoteButton.style.bottom = "3rem";
+  //close dropdown
   caret.style.transform = "rotate(90deg)";
   menuCategoriesDropdown.style.display = "none";
   selectedCategoriesDropdown.innerText = "Select Category";
   selectedCategoriesDropdown.style.opacity = "30%";
+  //
   dropdownIsClose = true;
 }
 
 // add note card
 function submitNote() {
+  //ALERT: empty fields
   if (document.querySelector(".header-field").value==="" || document.querySelector(".body-field").value==="" || selectedCategoriesDropdown.innerText === "Select Category") {
     alert("Please fill all the fields");
     return;
   }
-  
+  //getting header
   const noteHeader = document.querySelector(".header-field").value;
   document.querySelector(".header-field").value = null;
-  
+  //gettingbody
   const noteBody = document.querySelector(".body-field").value;
   document.querySelector(".body-field").value = null;
-
+  //getting category
   const cardCategoryName = selectedCategoriesDropdown.innerText;
   selectedCategoriesDropdown.innerText = "Select Category";
   selectedCategoriesDropdown.style.opacity = "30%";
-
+  //add the card to cards section
   cardsSection.innerHTML += (`<div class="card">
   <section class="card-header">${noteHeader}</section>
   <section class="card-body">${noteBody}
@@ -95,18 +102,19 @@ function submitNote() {
     <section class="card-category">${cardCategoryName}</section>
   </section>
   </div>`);
-
+  //
   closeAddNotes();
 }
 
 // add category
 const categories = [];
-
 function submitCategory() {
+  //ALERT: emptiness
   if (document.querySelector(".add-category-field").value==="" || document.querySelector(".add-category-field").value===null) {
     alert("Please write a category name.");
     return;
   }
+  //ALERT: duplicating categories
   const categoryName = document.querySelector(".add-category-field").value;
   for (let item of categories) {
     if(categoryName === item){
@@ -115,6 +123,7 @@ function submitCategory() {
       return;
     }
   }
+  //add category to sidebar
   categoriesSection.innerHTML += (`<li id="${categoryName}">
   <i class="fa-solid fa-trash delete-icon"></i>${categoryName}</li>`)
   categories.push(categoryName);
@@ -122,7 +131,7 @@ function submitCategory() {
   const newLiForDropdown = document.createElement('li');
   newLiForDropdown.innerText = categoryName;
   menuCategoriesDropdown.appendChild(newLiForDropdown);
-  //
+  //emptying field
   document.querySelector(".add-category-field").value = null;
 }
 
@@ -133,8 +142,9 @@ document.onkeydown = function(){
   }
 }
 
-//remove category
+// remove category
 categoriesSection.addEventListener("click" , (e) => {
+  //remove category from categories array
   if (e.target.classList[1] === "fa-trash") {
     categories.forEach((item) => {
       if(e.target.parentElement.id === item){
@@ -148,18 +158,20 @@ categoriesSection.addEventListener("click" , (e) => {
         dropdownItems[counter].remove();
       }
     }
-    //
+    //remove category from sidebar
     e.target.parentElement.remove();
   }
 })
 
-//open and close dropdown menu
+// open and close dropdown menu
 selectCategoriesDropdown.addEventListener("click",()=> {
+  //open dropdown
   if(dropdownIsClose == true && categories.length !== 0) {
     caret.style.transform = "rotate(0deg)";
     menuCategoriesDropdown.style.display = "flex";
     dropdownIsClose = false;
   }
+  //close dropdown
   else if(dropdownIsClose == false) {
     caret.style.transform = "rotate(90deg)";
     menuCategoriesDropdown.style.display = "none";
@@ -167,13 +179,15 @@ selectCategoriesDropdown.addEventListener("click",()=> {
   }
 })
 
-//select from categories in the dropdown
+// select from categories in the dropdown
 menuCategoriesDropdown.addEventListener("click",(e) => {
   if(e.target.nodeName === "LI") {
     selectedCategoriesDropdown.innerText = e.target.innerText;
     selectedCategoriesDropdown.style.opacity = "100%";
+    //close dropdown
     caret.style.transform = "rotate(90deg)";
     menuCategoriesDropdown.style.display = "none";
+    //
     dropdownIsClose = true;
   }
 })
