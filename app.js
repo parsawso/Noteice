@@ -152,7 +152,7 @@ categoriesSection.addEventListener("click" , (e) => {
 
 //open and close dropdown menu
 selectCategoriesDropdown.addEventListener("click",()=> {
-  if(dropdownIsClose == true) {
+  if(dropdownIsClose == true && categories.length !== 0) {
     caret.style.transform = "rotate(0deg)";
     menuCategoriesDropdown.style.display = "flex";
     dropdownIsClose = false;
