@@ -276,11 +276,9 @@ header {
   background-color: var(--background-color);
   position: fixed;
   z-index: 3;
-  width: 45rem;
+  width: 85%;
   height: fit-content;
   top: -60rem;
-  right: 2rem;
-  left: 2rem;
   transition: 0.3s ease-out;
   padding: 2rem;
 }
