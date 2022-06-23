@@ -16,6 +16,7 @@ const selectCategoriesDropdown = document.querySelector(".select_categories-drop
 const selectedCategoriesDropdown = document.querySelector(".selected_categories-dropdown");
 const dropdownItems = menuCategoriesDropdown.getElementsByTagName("li");
 const visibleCategory = document.querySelector(".visible-category");
+const CategoriesItems = categoriesSection.getElementsByTagName("li");
 
 // Default Values
   //close add notes section
@@ -59,6 +60,12 @@ const visibleCategory = document.querySelector(".visible-category");
       </div>`);
     }
   })
+  //change selected category background
+  for(var counter=0 ; counter<CategoriesItems.length ; counter++) {
+    if (CategoriesItems[counter].innerText === visibleCategory.innerText) {
+      CategoriesItems[counter].style.backgroundColor = "var(--secondary-color)";
+    }
+  }
 
 // sidebar action
 function openSidebar() {
