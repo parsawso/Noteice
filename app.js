@@ -28,6 +28,14 @@ const dropdownItems = menuCategoriesDropdown.getElementsByTagName("li");
   //dropdown is close
   let dropdownIsClose = true;
 
+// get back all items when page refreshes
+//categories
+const categories = JSON.parse(localStorage.getItem("categories") || "[]");
+categories.forEach((item) => {
+  categoriesSection.innerHTML += (`<li>
+  <i class="fa-solid fa-trash delete-icon"></i>${item}</li>`);
+})
+
 // sidebar action
 function openSidebar() {
   sidebar.style.left = "0";
@@ -42,7 +50,7 @@ function closeSidebar() {
   addNoteButton.style.bottom = "3rem";
 }
 
-//sticky top bar when scroll up
+// sticky top bar when scroll up
 let prevScrollpos = window.pageYOffset;
 window.onscroll = function () {
   let currentScrollPos = window.pageYOffset;
@@ -107,7 +115,6 @@ function submitNote() {
 }
 
 // add category
-const categories = [];
 function submitCategory() {
   //ALERT: emptiness
   if (document.querySelector(".add-category-field").value==="" || document.querySelector(".add-category-field").value===null) {
@@ -124,9 +131,11 @@ function submitCategory() {
     }
   }
   //add category to sidebar
-  categoriesSection.innerHTML += (`<li id="${categoryName}">
-  <i class="fa-solid fa-trash delete-icon"></i>${categoryName}</li>`)
+  categoriesSection.innerHTML += (`<li>
+  <i class="fa-solid fa-trash delete-icon"></i>${categoryName}</li>`);
   categories.push(categoryName);
+  //add category to local storage
+  localStorage.setItem("categories",JSON.stringify(categories));
   //add category to dropdown menu
   const newLiForDropdown = document.createElement('li');
   newLiForDropdown.innerText = categoryName;
@@ -147,10 +156,12 @@ categoriesSection.addEventListener("click" , (e) => {
   //remove category from categories array
   if (e.target.classList[1] === "fa-trash") {
     categories.forEach((item) => {
-      if(e.target.parentElement.id === item){
+      if(e.target.parentElement.innerText === item){
         categories.splice(categories.indexOf(item),1);
       }
     })
+    //remove category from local storage
+    localStorage.setItem("categories",JSON.stringify(categories));
     //remove category from categories dropdown menu
     const categoryName = e.target.parentElement.innerText;
     for(var counter=0 ; counter<dropdownItems.length ; ++counter) {
