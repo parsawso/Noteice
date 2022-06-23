@@ -111,7 +111,7 @@ header {
   left: -50rem;
   top: 0;
   bottom: 0;
-  width: 40rem;
+  width: 90%;
   background: var(--background-color);
   overflow-x: hidden;
   overflow-y: scroll;
