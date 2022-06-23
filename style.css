@@ -263,6 +263,7 @@ header {
 }
 
 .card-time {
+  font-size: 1.25rem;
   color: var(--primary-color);
   opacity: 30%;
 }
