@@ -30,7 +30,7 @@ const dropdownItems = menuCategoriesDropdown.getElementsByTagName("li");
 
 // keep all items even when page refreshes
   // categories
-  const categories = JSON.parse(localStorage.getItem("categories") || "[]");
+  let categories = JSON.parse(localStorage.getItem("categories") || "[]");
   let newLiForDropdown;
   categories.forEach((item) => {
     //sidebar
@@ -109,7 +109,9 @@ function submitNote() {
   selectedCategoriesDropdown.style.opacity = "30%";
   //get time
   const cardTime = nowTime();
-  //add the card to cards section
+  //get card ID
+  const cardID = createCardID();
+  //add card to card section
   cardsSection.innerHTML += (`<div class="card">
   <section class="card-header">${cardHeader}</section>
   <section class="card-body">${cardBody}
@@ -220,4 +222,16 @@ function nowTime() {
   nowString = now.toDateString() + " " + now.getHours() + ":" + now.getMinutes();
   nowString = nowString.substring(4);
   return nowString;
+}
+
+// create card ID function
+let idHistory = JSON.parse(localStorage.getItem("idHistory") || "[]");
+function createCardID() {
+  let idNum;
+  do {
+    idNum = Math.floor(Math.random()*10000000000);
+  } while (idHistory.includes(idNum))
+  idHistory.push(idNum);
+  localStorage.setItem("idHistory" , JSON.stringify(idHistory));
+  return idNum;
 }
