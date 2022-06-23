@@ -98,22 +98,25 @@ function submitNote() {
     return;
   }
   //get header
-  const noteHeader = document.querySelector(".header-field").value;
+  const cardHeader = document.querySelector(".header-field").value;
   document.querySelector(".header-field").value = null;
   //get body
-  const noteBody = document.querySelector(".body-field").value;
+  const cardBody = document.querySelector(".body-field").value;
   document.querySelector(".body-field").value = null;
   //get category
   const cardCategoryName = selectedCategoriesDropdown.innerText;
   selectedCategoriesDropdown.innerText = "Select Category";
   selectedCategoriesDropdown.style.opacity = "30%";
+  //get time
+  const cardTime = nowTime();
   //add the card to cards section
   cardsSection.innerHTML += (`<div class="card">
-  <section class="card-header">${noteHeader}</section>
-  <section class="card-body">${noteBody}
+  <section class="card-header">${cardHeader}</section>
+  <section class="card-body">${cardBody}
   </section>
   <section class="card-footer">
     <i class="fa-solid fa-trash fa-2x delete-icon"></i>
+    <div class="card-time">${cardTime}</div>
     <section class="card-category">${cardCategoryName}</section>
   </section>
   </div>`);
