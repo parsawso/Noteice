@@ -240,7 +240,7 @@ header {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: left;
+  justify-content: space-between;
   position: relative;
   bottom: 0;
   padding: 1.5rem 1.5rem 1.5rem;
@@ -256,14 +256,17 @@ header {
   transition: 0.1s;
 }
 
+.card-time {
+  color: var(--primary-color);
+  opacity: 30%;
+}
+
 .card-category {
   opacity: 50%;
   color: var(--primary-color);
   background-color: var(--shadow-color);
   padding: .5rem 1rem;
   border-radius: 1rem;
-  position: absolute;
-  right: 1.5rem;
 }
 
 /* adding notes */
