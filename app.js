@@ -209,3 +209,12 @@ menuCategoriesDropdown.addEventListener("click",(e) => {
     dropdownIsClose = true;
   }
 })
+
+// get now time function
+function nowTime() {
+  const now = new Date();
+  let nowString = "";
+  nowString = now.toDateString() + " " + now.getHours() + ":" + now.getMinutes();
+  nowString = nowString.substring(4);
+  return nowString;
+}
