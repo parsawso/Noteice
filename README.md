@@ -6,6 +6,8 @@ To Do List:
 
     - make it responsive
 
+    - land the page
+
     - editing cards
 
     - editing categories
