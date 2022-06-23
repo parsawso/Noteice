@@ -149,6 +149,11 @@ header {
   row-gap: 1rem;
   margin: 2rem 1.5rem 1rem;
 }
+/* all categories */
+.categories li:first-child {
+  position: relative;
+  padding-left: 6.75rem !important;
+}
 
 .categories li {
   cursor: pointer;
