@@ -41,7 +41,20 @@ const dropdownItems = menuCategoriesDropdown.getElementsByTagName("li");
     newLiForDropdown.innerText = item;
     menuCategoriesDropdown.appendChild(newLiForDropdown);
   })
-
+  // cards
+  let cards = JSON.parse(localStorage.getItem("cards") || "[]");
+  cards.forEach((item) => {
+    cardsSection.innerHTML += (`<div class="card">
+    <section class="card-header">${item.cardHeader}</section>
+    <section class="card-body">${item.cardBody}
+    </section>
+    <section class="card-footer">
+      <i class="fa-solid fa-trash fa-2x delete-icon"></i>
+      <div class="card-time">${item.cardTime}</div>
+      <section class="card-category">${item.cardCategoryName}</section>
+    </section>
+    </div>`);
+  })
 
 // sidebar action
 function openSidebar() {
@@ -111,6 +124,16 @@ function submitNote() {
   const cardTime = nowTime();
   //get card ID
   const cardID = createCardID();
+  //add card to local storage
+  const card = {
+    cardHeader: cardHeader,
+    cardBody: cardBody,
+    cardTime: cardTime,
+    cardCategoryName: cardCategoryName,
+    cardID: cardID
+  };
+  cards.push(card);
+  localStorage.setItem("cards",JSON.stringify(cards));
   //add card to card section
   cardsSection.innerHTML += (`<div class="card">
   <section class="card-header">${cardHeader}</section>
