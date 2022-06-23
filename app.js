@@ -15,6 +15,7 @@ const menuCategoriesDropdown = document.querySelector(".menu_categories-dropdown
 const selectCategoriesDropdown = document.querySelector(".select_categories-dropdown");
 const selectedCategoriesDropdown = document.querySelector(".selected_categories-dropdown");
 const dropdownItems = menuCategoriesDropdown.getElementsByTagName("li");
+const visibleCategory = document.querySelector(".visible-category");
 
 // Default Values
   //close add notes section
@@ -42,18 +43,21 @@ const dropdownItems = menuCategoriesDropdown.getElementsByTagName("li");
     menuCategoriesDropdown.appendChild(newLiForDropdown);
   })
   // cards
+  visibleCategory.innerText = localStorage.getItem("selectedCategory");
   let cards = JSON.parse(localStorage.getItem("cards") || "[]");
   cards.forEach((item) => {
-    cardsSection.innerHTML += (`<div class="card" id="${item.cardID}">
-    <section class="card-header">${item.cardHeader}</section>
-    <section class="card-body">${item.cardBody}
-    </section>
-    <section class="card-footer">
-      <i class="fa-solid fa-trash fa-2x delete-icon"></i>
-      <div class="card-time">${item.cardTime}</div>
-      <section class="card-category">${item.cardCategoryName}</section>
-    </section>
-    </div>`);
+    if (visibleCategory.innerText == item.cardCategoryName || visibleCategory.innerText === "All Categories"){
+      cardsSection.innerHTML += (`<div class="card" id="${item.cardID}">
+      <section class="card-header">${item.cardHeader}</section>
+      <section class="card-body">${item.cardBody}
+      </section>
+      <section class="card-footer">
+        <i class="fa-solid fa-trash fa-2x delete-icon"></i>
+        <div class="card-time">${item.cardTime}</div>
+        <section class="card-category">${item.cardCategoryName}</section>
+      </section>
+      </div>`);
+    }
   })
 
 // sidebar action
@@ -274,3 +278,11 @@ function createCardID() {
   localStorage.setItem("idHistory" , JSON.stringify(idHistory));
   return idNum;
 }
+
+// filter cards
+categoriesSection.addEventListener("click" , (e) => {
+  if (e.target.nodeName === "LI" && e.target.classList[1] !== "fa-trash") {
+    localStorage.setItem("selectedCategory",e.target.innerText);
+    location.reload();
+    }
+})
