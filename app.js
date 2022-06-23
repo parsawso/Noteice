@@ -44,7 +44,7 @@ const dropdownItems = menuCategoriesDropdown.getElementsByTagName("li");
   // cards
   let cards = JSON.parse(localStorage.getItem("cards") || "[]");
   cards.forEach((item) => {
-    cardsSection.innerHTML += (`<div class="card">
+    cardsSection.innerHTML += (`<div class="card" id="${item.cardID}">
     <section class="card-header">${item.cardHeader}</section>
     <section class="card-body">${item.cardBody}
     </section>
@@ -135,7 +135,7 @@ function submitNote() {
   cards.push(card);
   localStorage.setItem("cards",JSON.stringify(cards));
   //add card to card section
-  cardsSection.innerHTML += (`<div class="card">
+  cardsSection.innerHTML += (`<div class="card" id="${cardID}">
   <section class="card-header">${cardHeader}</section>
   <section class="card-body">${cardBody}
   </section>
