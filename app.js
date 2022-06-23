@@ -215,24 +215,36 @@ document.onkeydown = function(){
 
 // remove category
 categoriesSection.addEventListener("click" , (e) => {
-  //remove category from categories array
   if (e.target.classList[1] === "fa-trash") {
-    categories.forEach((item) => {
-      if(e.target.parentElement.innerText === item){
-        categories.splice(categories.indexOf(item),1);
+    if (confirm(`Deleting this category will also delete ALL ITS CARDS!
+
+Are you sure you want to delete this category?`) == true) {
+      //remove all cards
+      cards.forEach((item) => {
+        if(e.target.parentElement.innerText == item.cardCategoryName){
+          cards.splice(cards.indexOf(item),1);
+        }
+      })
+      localStorage.setItem("cards",JSON.stringify(cards));
+      //remove category from categories array
+      categories.forEach((item) => {
+        if(e.target.parentElement.innerText === item){
+          categories.splice(categories.indexOf(item),1);
+        }
+      })
+      //remove category from local storage
+      localStorage.setItem("categories",JSON.stringify(categories));
+      //remove category from categories dropdown menu
+      const categoryName = e.target.parentElement.innerText;
+      for(var counter=0 ; counter<dropdownItems.length ; ++counter) {
+        if (dropdownItems[counter].innerText === categoryName) {
+          dropdownItems[counter].remove();
+        }
       }
-    })
-    //remove category from local storage
-    localStorage.setItem("categories",JSON.stringify(categories));
-    //remove category from categories dropdown menu
-    const categoryName = e.target.parentElement.innerText;
-    for(var counter=0 ; counter<dropdownItems.length ; ++counter) {
-      if (dropdownItems[counter].innerText === categoryName) {
-        dropdownItems[counter].remove();
-      }
+      //remove category from sidebar
+      e.target.parentElement.remove();
+      location.reload();
     }
-    //remove category from sidebar
-    e.target.parentElement.remove();
   }
 })
 
