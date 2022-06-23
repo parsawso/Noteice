@@ -111,7 +111,7 @@ header {
   left: -50rem;
   top: 0;
   bottom: 0;
-  width: 90%;
+  width: 0;
   background: var(--background-color);
   overflow-x: hidden;
   overflow-y: scroll;
@@ -334,7 +334,7 @@ header {
 .field {
   font-family: "Fira Sans", sans-serif;
   resize: none;
-  position:relative;
+  position: relative;
   border: none;
   background-color: var(--light-color);
   box-shadow: 0 0 3rem var(--shadow-color);
@@ -448,4 +448,21 @@ header {
   width: 100%;
   bottom: 0;
   height: 6rem;
+}
+
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+/*+++++++++++++++++++++ Tablet ++++++++++++++++++++++++*/
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+@media only screen and (min-width: 600px) {
+
+  .cards-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+  }
+
+  #add-notes-section {
+    width: fit-content;
+  }
+
 }
