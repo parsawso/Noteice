@@ -67,18 +67,20 @@ const CategoriesItems = categoriesSection.getElementsByTagName("li");
     }
   }
 
-// sidebar action
+// open and close sidebar
 function openSidebar() {
   sidebar.style.left = "0";
   sidebar.style.boxShadow = "none"
   brightnessGlass.style.display = "block";
   addNoteButton.style.bottom = "-10rem";
+  sidebar.style.width = "90%";
 }
 function closeSidebar() {
   sidebar.style.left = "-50rem";
   sidebar.style.boxShadow = "1rem 0 1rem var(--shadow-color)"
   brightnessGlass.style.display = "none";
   addNoteButton.style.bottom = "3rem";
+  sidebar.style.width = "50%";
 }
 
 // sticky top bar when scroll up
@@ -100,7 +102,6 @@ function openAddNotes() {
   addNoteButton.style.bottom = "-10rem";
   document.querySelector(".header-field").focus();
 }
-
 function closeAddNotes() {
   addNotesSection.style.top = "-60rem";
   brightnessGlass.style.display = "none";
