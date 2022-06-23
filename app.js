@@ -28,13 +28,20 @@ const dropdownItems = menuCategoriesDropdown.getElementsByTagName("li");
   //dropdown is close
   let dropdownIsClose = true;
 
-// get back all items when page refreshes
-//categories
-const categories = JSON.parse(localStorage.getItem("categories") || "[]");
-categories.forEach((item) => {
-  categoriesSection.innerHTML += (`<li>
-  <i class="fa-solid fa-trash delete-icon"></i>${item}</li>`);
-})
+// keep all items even when page refreshes
+  // categories
+  const categories = JSON.parse(localStorage.getItem("categories") || "[]");
+  let newLiForDropdown;
+  categories.forEach((item) => {
+    //sidebar
+    categoriesSection.innerHTML += (`<li>
+    <i class="fa-solid fa-trash delete-icon"></i>${item}</li>`);
+    //dropdown
+    newLiForDropdown = document.createElement('li');
+    newLiForDropdown.innerText = item;
+    menuCategoriesDropdown.appendChild(newLiForDropdown);
+  })
+
 
 // sidebar action
 function openSidebar() {
@@ -90,13 +97,13 @@ function submitNote() {
     alert("Please fill all the fields");
     return;
   }
-  //getting header
+  //get header
   const noteHeader = document.querySelector(".header-field").value;
   document.querySelector(".header-field").value = null;
-  //gettingbody
+  //get body
   const noteBody = document.querySelector(".body-field").value;
   document.querySelector(".body-field").value = null;
-  //getting category
+  //get category
   const cardCategoryName = selectedCategoriesDropdown.innerText;
   selectedCategoriesDropdown.innerText = "Select Category";
   selectedCategoriesDropdown.style.opacity = "30%";
@@ -137,7 +144,7 @@ function submitCategory() {
   //add category to local storage
   localStorage.setItem("categories",JSON.stringify(categories));
   //add category to dropdown menu
-  const newLiForDropdown = document.createElement('li');
+  newLiForDropdown = document.createElement('li');
   newLiForDropdown.innerText = categoryName;
   menuCategoriesDropdown.appendChild(newLiForDropdown);
   //emptying field
