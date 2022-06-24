@@ -15,75 +15,79 @@
   <body>
     <div class="brightness-glass"></div>
     <div class="title-box">
-       <i class="fa-solid fa-circle-check fa-3x logo"></i>
-       <h1 class="title">Noteice</h1>
+      <i class="fa-solid fa-circle-check fa-3x logo"></i>
+      <h1 class="title">Noteice</h1>
     </div>
-     <div id="top-bar">
-      <nav>
-         <button class="burger-menu-icon" onclick="openSidebar()">
-           <i class="fa-solid fa-bars fa-2x"></i>
-         </button>
-      </nav>
-       <header>
-        <h2 class="visible-category">All Categories</h2>
-      </header>
-    </div>
-
-    <div class="cards-section">
-    </div>
-
-    <aside id="sidebar">
-      <div id="sidebar-header">
-        <button class="burger-menu-icon" onclick="closeSidebar()">
-          <i class="fa-solid fa-bars fa-2x"></i>
-        </button>
-        <h2 id="sidebar-title">My Categories</h2>
+    <div class="app">
+  
+      <div id="sidebar">
+        <div id="sidebar-header">
+          <button class="burger-menu-icon" onclick="closeSidebar()">
+            <i class="fa-solid fa-bars fa-2x"></i>
+          </button>
+          <h2 id="sidebar-title">My Categories</h2>
+        </div>
+        <ul class="categories">
+          <li>All Categories</li>
+        </ul>
+        <div class="add-category-section">
+          <button class="add-category-btn" onclick="submitCategory()">
+            <i class="fa-solid fa-plus fa-2x"></i>
+          </button>
+          <input
+            type="text"
+            class="add-category-field"
+            placeholder="Add a category..."
+            maxlength="13"
+          ></input>
+        </div>
       </div>
-      <ul class="categories">
-        <li>All Categories</li>
-      </ul>
-      <div class="add-category-section">
-        <button class="add-category-btn" onclick="submitCategory()">
+      <div class="main">
+        <div id="top-bar">
+          <nav>
+             <button class="burger-menu-icon" onclick="openSidebar()">
+               <i class="fa-solid fa-bars fa-2x"></i>
+             </button>
+          </nav>
+           <header>
+            <h2 class="visible-category">All Categories</h2>
+          </header>
+        </div>
+    
+        <div class="cards-section">
+        </div>
+    
+        <button id="add-note-button" onclick="openAddNotes()">
           <i class="fa-solid fa-plus fa-2x"></i>
         </button>
-        <input
-          type="text"
-          class="add-category-field"
-          placeholder="Add a category..."
-          maxlength="13"
-        ></input>
-      </div>
-    </aside>
-
-    <button id="add-note-button" onclick="openAddNotes()">
-      <i class="fa-solid fa-plus fa-2x"></i>
-    </button>
-
-    <div id="add-notes-section">
-      <button id="close-button" onclick="closeAddNotes()">
-        <i class="fa-solid fa-xmark fa-2x"></i>
-      </button>
-      <form>
-        <input class="field header-field" placeholder="Title" maxlength="20"></input>
-        <textarea
-          type="text"
-          class="field body-field"
-          placeholder="Take a note..."
-          maxlength="250"
-        ></textarea>
-      </form>
-      <div class="categories-dropdown">
-        <div class="select_categories-dropdown">
-          <span class="selected_categories-dropdown">Select Category</span>
-          <i class="fa-solid fa-caret-down caret"></i>
+    
+        <div id="add-notes-section">
+          <button id="close-button" onclick="closeAddNotes()">
+            <i class="fa-solid fa-xmark fa-2x"></i>
+          </button>
+          <form>
+            <input class="field header-field" placeholder="Title" maxlength="20"></input>
+            <textarea
+              type="text"
+              class="field body-field"
+              placeholder="Take a note..."
+              maxlength="250"
+            ></textarea>
+          </form>
+          <div class="categories-dropdown">
+            <div class="select_categories-dropdown">
+              <span class="selected_categories-dropdown">Select Category</span>
+              <i class="fa-solid fa-caret-down caret"></i>
+            </div>
+            <ul class="menu_categories-dropdown">
+            </ul>
+          </div>
+          <button class="submit-note-btn" onclick="submitNote()">ADD NOTE</button>
         </div>
-        <ul class="menu_categories-dropdown">
-        </ul>
+    
+        <div class="footer"></div>
       </div>
-      <button class="submit-note-btn" onclick="submitNote()">ADD NOTE</button>
     </div>
-
-    <div class="footer"></div>
 
     <script src="app.js"></script>
   </body>
