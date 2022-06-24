@@ -70,14 +70,14 @@ const CategoriesItems = categoriesSection.getElementsByTagName("li");
 // open and close sidebar
 function openSidebar() {
   sidebar.style.left = "0";
-  sidebar.style.boxShadow = "none"
+  // sidebar.style.boxShadow = "none"
   brightnessGlass.style.display = "block";
   addNoteButton.style.bottom = "-10rem";
   sidebar.style.width = "90%";
 }
 function closeSidebar() {
   sidebar.style.left = "-50rem";
-  sidebar.style.boxShadow = "1rem 0 1rem var(--shadow-color)"
+  // sidebar.style.boxShadow = "1rem 0 1rem var(--shadow-color)"
   brightnessGlass.style.display = "none";
   addNoteButton.style.bottom = "3rem";
   sidebar.style.width = "50%";
@@ -306,3 +306,16 @@ categoriesSection.addEventListener("click" , (e) => {
     location.reload();
     }
 })
+
+//media queries
+function mediaQueries(minWidthLaptop) {
+  if (minWidthLaptop.matches) {
+    sidebar.style.left = "0";
+    sidebar.style.width = "100%";
+    brightnessGlass.style.display = "none";
+  }
+}
+
+var minWidthLaptop = window.matchMedia("(min-width: 990px)")
+mediaQueries(minWidthLaptop);
+minWidthLaptop.addListener(mediaQueries);
