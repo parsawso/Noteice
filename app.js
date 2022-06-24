@@ -22,11 +22,11 @@ const CategoriesItems = categoriesSection.getElementsByTagName("li");
   //close add notes section
   addNotesSection.style.top = "-60rem";
   //close sidebar
-  sidebar.style.left = "-50rem";
+  // sidebar.style.left = "-50rem";
   //close brightness glass
   brightnessGlass.style.display = "none";
   //create sidebar boxshadow
-  sidebar.style.boxShadow = "1rem 0 1rem var(--shadow-color)"
+  // sidebar.style.boxShadow = "1rem 0 1rem var(--shadow-color)"
   //dropdown is close
   let dropdownIsClose = true;
 
