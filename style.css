@@ -238,6 +238,7 @@ header {
   padding: .5rem 1.5rem;
   white-space: wrap;
   text-overflow: ellipsis;
+  overflow: hidden;
   font-size: 1.5rem;
   flex-basis: 13rem;
 }
