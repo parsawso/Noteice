@@ -69,6 +69,7 @@ body {
   box-shadow: 0 0 2.5rem var(--shadow-color);
   border-radius: 1rem;
   padding: 1.5rem 2rem;
+  margin-top: 1rem;
   position: sticky;
   top: 3rem;
   display: flex;
