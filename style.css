@@ -102,13 +102,14 @@ header {
 
 /* aside */
 #sidebar {
-  box-shadow: 1rem 0 1rem var(--shadow-color);
+  /* box-shadow: 1rem 0 1rem var(--shadow-color); */
+  box-shadow: none;
   position: fixed;
   z-index: 3;
   left: -50rem;
   top: 0;
   bottom: 0;
-  width: 0;
+  width: 50%;
   background: var(--background-color);
   overflow-x: hidden;
   overflow-y: scroll;
