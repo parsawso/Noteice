@@ -51,7 +51,7 @@ body {
   flex-direction: row;
   justify-content: left;
   align-items: center;
-  padding: 0 2rem 2rem 2rem;
+  padding: 0 2rem 1rem 2rem;
 }
 
 .title {
@@ -484,6 +484,7 @@ header {
     box-shadow: none;
     background-color: #fff;
     box-shadow: .5rem .5rem 1.5rem var(--shadow-color);
+    margin-top: 2rem;
   }
   .brightness-glass {
     display: none;
@@ -493,14 +494,19 @@ header {
     position: absolute;
     display: grid;
     grid-template-columns: .3fr 1fr;
-    height: 87vh;
-    /* column-gap: 1rem; */
     width: 100vw;
+    height: 88vh;
     background: none;
   }
   .main {
     position: relative;
-    margin: 0 2rem
+    padding: 0 2rem;
+    overflow-y: scroll;
+    overflow-x: visible;
+    padding-top: 2rem;
+  } 
+  .main::-webkit-scrollbar { 
+    display: none;
   }
   #sidebar-header {
     box-shadow: none;
