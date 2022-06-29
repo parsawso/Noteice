@@ -101,6 +101,15 @@ function openAddNotes() {
   brightnessGlass.style.display = "block";
   addNoteButton.style.bottom = "-10rem";
   document.querySelector(".header-field").focus();
+  //select the filtered category from dropdown menu
+  if (visibleCategory.innerText === "All Categories") {
+    selectedCategoriesDropdown.innerText = "Select Category";
+    selectedCategoriesDropdown.style.opacity = "30%";
+  }
+  else {
+    selectedCategoriesDropdown.innerText = visibleCategory.innerText;
+    selectedCategoriesDropdown.style.opacity = "100%";
+  }
 }
 function closeAddNotes() {
   addNotesSection.style.top = "-60rem";
@@ -147,16 +156,18 @@ function submitNote() {
   cards.push(card);
   localStorage.setItem("cards",JSON.stringify(cards));
   //add card to card section
-  cardsSection.innerHTML += (`<div class="card" id="${cardID}">
-  <section class="card-header">${cardHeader}</section>
-  <section class="card-body">${cardBody}
-  </section>
-  <section class="card-footer">
-    <i class="fa-solid fa-trash fa-2x delete-icon"></i>
-    <div class="card-time">${cardTime}</div>
-    <section class="card-category">${cardCategoryName}</section>
-  </section>
-  </div>`);
+  if (visibleCategory.innerText == cardCategoryName || visibleCategory.innerText === "All Categories") {
+    cardsSection.innerHTML += (`<div class="card" id="${cardID}">
+    <section class="card-header">${cardHeader}</section>
+    <section class="card-body">${cardBody}
+    </section>
+    <section class="card-footer">
+      <i class="fa-solid fa-trash fa-2x delete-icon"></i>
+      <div class="card-time">${cardTime}</div>
+      <section class="card-category">${cardCategoryName}</section>
+    </section>
+    </div>`);
+  }
   //
   closeAddNotes();
 }
