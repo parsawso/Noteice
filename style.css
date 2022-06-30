@@ -341,7 +341,6 @@ header {
   box-shadow: 0 0 3rem var(--shadow-color);
   border-radius: .5rem;
   width: 100%;
-  height: 3rem;
   margin: .5rem 0;
   outline: none;
   overflow: visible;
@@ -363,9 +362,11 @@ header {
 }
 
 .body-field {
-  height: 25rem;
+  height: 10rem;
   font-size: 1.5rem;
   padding: 1.5rem;
+} .body-field::-webkit-scrollbar { 
+  display: none;
 }
 
 .submit-note-btn {
@@ -541,5 +542,8 @@ header {
   }
   .cards-section {
     padding: 0 0 3rem;
+  }
+  .body-field {
+    height: 25rem;
   }
 }
