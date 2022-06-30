@@ -19,6 +19,10 @@ const visibleCategory = document.querySelector(".visible-category");
 const CategoriesItems = categoriesSection.getElementsByTagName("li");
 
 // Default Values
+  //select all categories when the app opens for the very first time
+  if (localStorage.getItem("selectedCategory") == null){
+    localStorage.setItem("selectedCategory","All Categories");
+  }
   //close add notes section
   addNotesSection.style.top = "-60rem";
   //close sidebar
