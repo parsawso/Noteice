@@ -1,4 +1,5 @@
-// Define Values
+// +++++++++++++++++++++++++ DEFINE VALUES +++++++++++++++++++++++++++++++++++++++ //
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ //
 const brightnessGlass = document.querySelector(".brightness-glass");
 const sidebarButton = document.querySelector(".burger-menu-icon");
 const sidebar = document.querySelector("#sidebar");
@@ -17,8 +18,9 @@ const selectedCategoriesDropdown = document.querySelector(".selected_categories-
 const dropdownItems = menuCategoriesDropdown.getElementsByTagName("li");
 const visibleCategory = document.querySelector(".visible-category");
 const CategoriesItems = categoriesSection.getElementsByTagName("li");
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ //
 
-// Default Values
+// ++++++++++++++++++++++++++ DEFAULT VALUES +++++++++++++++++++++++++++++++++++++ //
   //select all categories when the app opens for the very first time
   if (localStorage.getItem("selectedCategory") == null){
     localStorage.setItem("selectedCategory","All Categories");
@@ -29,8 +31,9 @@ const CategoriesItems = categoriesSection.getElementsByTagName("li");
   brightnessGlass.style.display = "none";
   //dropdown is close
   let dropdownIsClose = true;
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ //
 
-// keep all items even when page refreshes
+// ++++++++++++++++++++++++++++++ RENDER +++++++++++++++++++++++++++++++++++++++++ //
   // categories
   let categories = JSON.parse(localStorage.getItem("categories") || "[]");
   let newLiForDropdown;
@@ -66,8 +69,10 @@ const CategoriesItems = categoriesSection.getElementsByTagName("li");
       CategoriesItems[counter].style.backgroundColor = "var(--secondary-color)";
     }
   }
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ //
 
-// open and close sidebar
+// ++++++++++++++++++++++++++++ FUNCTIONALITIES ++++++++++++++++++++++++++++++++++ //
+// FUNCTION: open and close sidebar
 function openSidebar() {
   sidebar.style.left = "0";
   brightnessGlass.style.display = "block";
@@ -93,7 +98,7 @@ window.onscroll = function () {
   prevScrollpos = currentScrollPos;
 };
 
-// Open and close add notes
+// FUNCTION: Open and close add notes section
 function openAddNotes() {
   addNotesSection.style.top = "2rem";
   brightnessGlass.style.display = "block";
@@ -122,7 +127,7 @@ function closeAddNotes() {
   dropdownIsClose = true;
 }
 
-// add note card
+// FUNCTION: add note card
 function submitNote() {
   //ALERT: empty fields
   if (document.querySelector(".header-field").value==="" || document.querySelector(".body-field").value==="" || selectedCategoriesDropdown.innerText === "Select Category") {
@@ -170,7 +175,7 @@ function submitNote() {
   closeAddNotes();
 }
 
-//remove note card
+// remove note card
 cardsSection.addEventListener("click" , (e) => {
   //remove card from cards array
   if (e.target.classList[1] === "fa-trash") {
@@ -186,7 +191,7 @@ cardsSection.addEventListener("click" , (e) => {
   }
 })
 
-// add category
+// FUNCTION: add category
 function submitCategory() {
   //ALERT: emptiness
   if (document.querySelector(".add-category-field").value==="" || document.querySelector(".add-category-field").value===null) {
@@ -290,7 +295,7 @@ menuCategoriesDropdown.addEventListener("click",(e) => {
   }
 })
 
-// get now time function
+// FUNCTION: get now time
 function nowTime() {
   const now = new Date();
   let nowString = "";
@@ -299,7 +304,7 @@ function nowTime() {
   return nowString;
 }
 
-// create card ID function
+// FUNCTION: create card ID
 let idHistory = JSON.parse(localStorage.getItem("idHistory") || "[]");
 function createCardID() {
   let idNum;
@@ -319,7 +324,7 @@ categoriesSection.addEventListener("click" , (e) => {
     }
 })
 
-// media queries
+// FUNCTION: media queries
 function mediaQueries(minWidthLaptop) {
   if (minWidthLaptop.matches) {
     sidebar.style.left = "0";
@@ -331,3 +336,5 @@ function mediaQueries(minWidthLaptop) {
 var minWidthLaptop = window.matchMedia("(min-width: 990px)")
 mediaQueries(minWidthLaptop);
 minWidthLaptop.addListener(mediaQueries);
+
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ //
