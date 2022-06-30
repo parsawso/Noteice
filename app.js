@@ -25,12 +25,8 @@ const CategoriesItems = categoriesSection.getElementsByTagName("li");
   }
   //close add notes section
   addNotesSection.style.top = "-60rem";
-  //close sidebar
-  // sidebar.style.left = "-50rem";
   //close brightness glass
   brightnessGlass.style.display = "none";
-  //create sidebar boxshadow
-  // sidebar.style.boxShadow = "1rem 0 1rem var(--shadow-color)"
   //dropdown is close
   let dropdownIsClose = true;
 
@@ -74,14 +70,12 @@ const CategoriesItems = categoriesSection.getElementsByTagName("li");
 // open and close sidebar
 function openSidebar() {
   sidebar.style.left = "0";
-  // sidebar.style.boxShadow = "none"
   brightnessGlass.style.display = "block";
   addNoteButton.style.bottom = "-10rem";
   sidebar.style.width = "90%";
 }
 function closeSidebar() {
   sidebar.style.left = "-50rem";
-  // sidebar.style.boxShadow = "1rem 0 1rem var(--shadow-color)"
   brightnessGlass.style.display = "none";
   addNoteButton.style.bottom = "3rem";
   sidebar.style.width = "50%";
@@ -325,7 +319,7 @@ categoriesSection.addEventListener("click" , (e) => {
     }
 })
 
-//media queries
+// media queries
 function mediaQueries(minWidthLaptop) {
   if (minWidthLaptop.matches) {
     sidebar.style.left = "0";
