@@ -301,7 +301,7 @@ header {
   border: none;
   box-shadow: 0 0 2.5rem var(--shadow-color);
   background-color: var(--light-color);
-  color: var(--primary-color) !important;
+  color: var(--primary-color);
   border-radius: 50%;
   padding: 2rem 2.2rem;
   position: fixed;
@@ -367,6 +367,7 @@ header {
 }
 
 .submit-note-btn {
+  color: var(--primary-color);
   font-family: "Fira Sans", sans-serif;
   position: relative;
   background-color: var(--secondary-color);
