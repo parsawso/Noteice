@@ -1,5 +1,4 @@
 // +++++++++++++++++++++++++ DEFINE VALUES +++++++++++++++++++++++++++++++++++++++ //
-// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ //
 const brightnessGlass = document.querySelector(".brightness-glass");
 const sidebarButton = document.querySelector(".burger-menu-icon");
 const sidebar = document.querySelector("#sidebar");
@@ -35,40 +34,43 @@ const CategoriesItems = categoriesSection.getElementsByTagName("li");
 
 // ++++++++++++++++++++++++++++++ RENDER +++++++++++++++++++++++++++++++++++++++++ //
   // categories
-  let categories = JSON.parse(localStorage.getItem("categories") || "[]");
-  let newLiForDropdown;
-  categories.forEach((item) => {
-    //sidebar
-    categoriesSection.innerHTML += (`<li>
-    <i class="fa-solid fa-trash delete-icon"></i>${item}</li>`);
-    //dropdown
-    newLiForDropdown = document.createElement('li');
-    newLiForDropdown.innerText = item;
-    menuCategoriesDropdown.appendChild(newLiForDropdown);
-  })
+    let categories = JSON.parse(localStorage.getItem("categories") || "[]");
+    let newLiForDropdown;
+    categories.forEach((item) => {
+      //sidebar
+      categoriesSection.innerHTML += (`<li>
+      <i class="fa-solid fa-trash delete-icon"></i>${item}</li>`);
+      //dropdown
+      newLiForDropdown = document.createElement('li');
+      newLiForDropdown.innerText = item;
+      menuCategoriesDropdown.appendChild(newLiForDropdown);
+    })
   // cards
-  visibleCategory.innerText = localStorage.getItem("selectedCategory");
-  let cards = JSON.parse(localStorage.getItem("cards") || "[]");
-  cards.forEach((item) => {
-    if (visibleCategory.innerText == item.cardCategoryName || visibleCategory.innerText === "All Categories"){
-      cardsSection.innerHTML += (`<div class="card" id="${item.cardID}">
-      <section class="card-header">${item.cardHeader}</section>
-      <section class="card-body">${item.cardBody}
-      </section>
-      <section class="card-footer">
-        <i class="fa-solid fa-trash fa-2x delete-icon"></i>
-        <div class="card-time">${item.cardTime}</div>
-        <section class="card-category">${item.cardCategoryName}</section>
-      </section>
-      </div>`);
+    visibleCategory.innerText = localStorage.getItem("selectedCategory");
+    let cards = JSON.parse(localStorage.getItem("cards") || "[]");
+    //sort note cards from latest
+    cards = sortByDate(cards);
+    //print cards
+    cards.forEach((item) => {
+      if (visibleCategory.innerText == item.cardCategoryName || visibleCategory.innerText === "All Categories"){
+        cardsSection.innerHTML += (`<div class="card" id="${item.cardID}">
+        <section class="card-header">${item.cardHeader}</section>
+        <section class="card-body">${item.cardBody}
+        </section>
+        <section class="card-footer">
+          <i class="fa-solid fa-trash fa-2x delete-icon"></i>
+          <div class="card-time">${item.cardTime}</div>
+          <section class="card-category">${item.cardCategoryName}</section>
+        </section>
+        </div>`);
+      }
+    })
+  // change selected category background
+    for(var counter=0 ; counter<CategoriesItems.length ; counter++) {
+      if (CategoriesItems[counter].innerText === visibleCategory.innerText) {
+        CategoriesItems[counter].style.backgroundColor = "var(--secondary-color)";
+      }
     }
-  })
-  //change selected category background
-  for(var counter=0 ; counter<CategoriesItems.length ; counter++) {
-    if (CategoriesItems[counter].innerText === visibleCategory.innerText) {
-      CategoriesItems[counter].style.backgroundColor = "var(--secondary-color)";
-    }
-  }
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ //
 
 // ++++++++++++++++++++++++++++ FUNCTIONALITIES ++++++++++++++++++++++++++++++++++ //
@@ -158,20 +160,7 @@ function submitNote() {
   };
   cards.push(card);
   localStorage.setItem("cards",JSON.stringify(cards));
-  //add card to card section
-  if (visibleCategory.innerText == cardCategoryName || visibleCategory.innerText === "All Categories") {
-    cardsSection.innerHTML += (`<div class="card" id="${cardID}">
-    <section class="card-header">${cardHeader}</section>
-    <section class="card-body">${cardBody}
-    </section>
-    <section class="card-footer">
-      <i class="fa-solid fa-trash fa-2x delete-icon"></i>
-      <div class="card-time">${cardTime}</div>
-      <section class="card-category">${cardCategoryName}</section>
-    </section>
-    </div>`);
-  }
-  //
+  location.reload();
   closeAddNotes();
 }
 
@@ -336,5 +325,12 @@ function mediaQueries(minWidthLaptop) {
 var minWidthLaptop = window.matchMedia("(min-width: 990px)")
 mediaQueries(minWidthLaptop);
 minWidthLaptop.addListener(mediaQueries);
+
+// FUNCTION: sort array by date
+function sortByDate(array){
+  return array.sort((a,b)=>{
+    return new Date(a.cardTime) > new Date(b.cardTime) ? -1 : 1;
+  })
+}
 
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ //
