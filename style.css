@@ -269,6 +269,7 @@ header {
   padding: .5rem 1.5rem .5rem .5rem;
   cursor: pointer;
   transition: 0.1s;
+  z-index: 2;
 }.delete-icon:hover {
   opacity: 60%;
   transition: 0.1s;
@@ -279,6 +280,7 @@ header {
   padding: .5rem 1.5rem .5rem .5rem;
   cursor: pointer;
   transition: 0.1s;
+  z-index: 2;
 }.edit-icon:hover {
   opacity: 60%;
   transition: 0.1s;
