@@ -58,7 +58,10 @@ const CategoriesItems = categoriesSection.getElementsByTagName("li");
         <section class="card-body">${item.cardBody}
         </section>
         <section class="card-footer">
+        <div class="manipulate-card-section">
           <i class="fa-solid fa-trash fa-2x delete-icon"></i>
+          <i class="fa-solid fa-pen fa-2x edit-icon"></i>
+        </div>
           <div class="card-time">${item.cardTime}</div>
           <section class="card-category">${item.cardCategoryName}</section>
         </section>
