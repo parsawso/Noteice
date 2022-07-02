@@ -172,14 +172,14 @@ cardsSection.addEventListener("click" , (e) => {
   //remove card from cards array
   if (e.target.classList[1] === "fa-trash") {
     cards.forEach((item) => {
-      if(e.target.parentElement.parentElement.id == item.cardID){
+      if(e.target.parentElement.parentElement.parentElement.id == item.cardID){
         cards.splice(cards.indexOf(item),1);
       }
     })
     //remove card from local storage
     localStorage.setItem("cards",JSON.stringify(cards));
     //remove card from cards section
-    e.target.parentElement.parentElement.remove();
+    e.target.parentElement.parentElement.parentElement.remove();
   }
 })
 
