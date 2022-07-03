@@ -236,8 +236,10 @@ cardsSection.addEventListener("click" , (e) => {
 // FUNCTION: add category
 function submitCategory() {
   //ALERT: emptiness
-  if (document.querySelector(".add-category-field").value==="" || document.querySelector(".add-category-field").value===null) {
-    alert("Please write a category name.");
+  if (document.querySelector(".add-category-field").value==="" ||
+      document.querySelector(".add-category-field").value===null ||
+      document.querySelector(".add-category-field").value==="No Category") {
+    alert("Please write a acceptable category name.");
     return;
   }
   //ALERT: duplicating categories
