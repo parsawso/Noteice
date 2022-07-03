@@ -252,8 +252,8 @@ document.onkeydown = function(){
   if(window.event.keyCode=="13" && document.activeElement === document.querySelector(".add-category-field")){
     submitCategory();
   }
-  if(window.event.keyCode=="13" && document.activeElement === document.querySelector(".field")){
-    submitNote();
+  if(window.event.keyCode=="13" && document.activeElement === document.querySelector(".header-field")){
+    document.querySelector(".body-field").focus();
   }
 }
 
