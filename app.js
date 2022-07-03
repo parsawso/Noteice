@@ -148,20 +148,22 @@ function closeAddNotes() {
 // FUNCTION: add note card
 function submitNote() {
   //ALERT: empty fields
-  if (document.querySelector(".header-field").value==="" || document.querySelector(".body-field").value==="" || selectedCategoriesDropdown.innerText === "Select Category") {
+  if (document.querySelector(".header-field").value==="" || document.querySelector(".body-field").value==="") {
     alert("Please fill all the fields");
     return;
   }
   //get header
   const cardHeader = document.querySelector(".header-field").value;
-  document.querySelector(".header-field").value = null;
   //get body
   const cardBody = document.querySelector(".body-field").value;
-  document.querySelector(".body-field").value = null;
   //get category
-  const cardCategoryName = selectedCategoriesDropdown.innerText;
-  selectedCategoriesDropdown.innerText = "Select Category";
-  selectedCategoriesDropdown.style.opacity = "30%";
+  let cardCategoryName;
+  if (selectCategoriesDropdown.innerText == "Select Category") {
+    cardCategoryName = "No Category"
+  }
+  else {
+    cardCategoryName = selectedCategoriesDropdown.innerText;
+  }
   //get time
   const cardTime = nowTime();
   //get card ID
