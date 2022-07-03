@@ -126,10 +126,12 @@ function closeAddNotes() {
   //close dropdown
   caret.style.transform = "rotate(90deg)";
   menuCategoriesDropdown.style.display = "none";
-  selectedCategoriesDropdown.innerText = "Select Category";
-  selectedCategoriesDropdown.style.opacity = "30%";
-  //
   dropdownIsClose = true;
+  //empty fields
+  document.querySelector(".header-field").value = "";
+  document.querySelector(".body-field").value = "";
+  //
+  IdOfEditingCard = 0;
 }
 
 // FUNCTION: add note card
@@ -153,6 +155,14 @@ function submitNote() {
   const cardTime = nowTime();
   //get card ID
   const cardID = createCardID();
+  //if editing the card => delete the old card
+  if (IdOfEditingCard != 0) {
+    cards.forEach((item) => {
+      if (item.cardID == IdOfEditingCard) {
+        cards.splice(cards.indexOf(item),1);
+      }
+    })
+  }
   //add card to local storage
   const card = {
     cardHeader: cardHeader,
@@ -166,6 +176,30 @@ function submitNote() {
   location.reload();
   closeAddNotes();
 }
+
+// edit cards
+let IdOfEditingCard = 0;
+cardsSection.addEventListener("click" , (e) => {
+  if (e.target.classList[1] == "fa-pen"){
+    //get ID of the card
+    IdOfEditingCard = e.target.parentElement.parentElement.parentElement.id;
+    //
+    openAddNotes();
+    //get all editing card properties
+    let editingCard;
+    cards.forEach((item) => {
+      if (item.cardID == IdOfEditingCard){
+        editingCard = item;
+      }
+    })
+    //fill the add notes section with information of the selected card for editing
+    document.querySelector(".header-field").value = editingCard.cardHeader;
+    document.querySelector(".body-field").value = editingCard.cardBody;
+    selectedCategoriesDropdown.innerText = editingCard.cardCategoryName;
+    selectedCategoriesDropdown.style.opacity = "100%";
+    //next steps are in the submitNote() function
+  }
+})
 
 // remove note card
 cardsSection.addEventListener("click" , (e) => {
