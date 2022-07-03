@@ -412,7 +412,7 @@ header {
 
 /* Categories Dropdown Menu */
 .categories-dropdown {
-  width: 17rem;
+  width: 20rem;
   font-size: 1.5rem;
   position: relative;
   display: flex;
@@ -424,10 +424,20 @@ header {
   background-color: var(--light-color);
   box-shadow: 0 0 .5rem var(--shadow-color);
   border-radius: .5rem;
-  padding: 1rem 1.6rem;
+  padding: 1rem 1.6rem 1rem 1rem;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   cursor: pointer;
+}
+
+.clear-dropdown-icon {
+  opacity: 15%;
+  transition: .1s;
+  display: none;
+}.clear-dropdown-icon:hover {
+  opacity: 60%;
+  transition: .1s;
 }
 
 .selected_categories-dropdown {
