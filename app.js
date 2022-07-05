@@ -54,6 +54,10 @@ const clearDropdownIcon = document.querySelector(".clear-dropdown-icon");
     //print cards
     cards.forEach((item) => {
       if (visibleCategory.innerText == item.cardCategoryName || visibleCategory.innerText === "All Categories"){
+        //create category ID
+        let categoryNameForID = item.cardCategoryName;
+        categoryNameForID = categoryNameForID.replace(/\s+/g, '-');
+        //
         cardsSection.innerHTML += (`<div class="card" id="${item.cardID}">
         <section class="card-header">${item.cardHeader}</section>
         <section class="card-body">${item.cardBody}
@@ -64,7 +68,7 @@ const clearDropdownIcon = document.querySelector(".clear-dropdown-icon");
           <i class="fa-solid fa-pen fa-2x edit-icon"></i>
         </div>
           <div class="card-time">${item.cardTime}</div>
-          <section class="card-category">${item.cardCategoryName}</section>
+          <section class="card-category" id="${categoryNameForID}">${item.cardCategoryName}</section>
         </section>
         </div>`);
       }
@@ -117,7 +121,7 @@ function openAddNotes() {
     selectedCategoriesDropdown.style.opacity = "30%";
     //remove clear dropdown icon
     clearDropdownIcon.style.display = "none";
-    selectCategoriesDropdown.style.padding = "1rem 1.6rem 1rem";
+    selectCategoriesDropdown.style.padding = "1rem 1.6rem";
     //
   }
   else {
@@ -126,7 +130,7 @@ function openAddNotes() {
     selectedCategoriesDropdown.style.opacity = "100%";
     //show clear dropdown icon
     clearDropdownIcon.style.display = "block";
-    selectCategoriesDropdown.style.padding = "1rem 1.6rem 1rem 1rem";
+    selectCategoriesDropdown.style.padding = ".75rem 1.6rem .75rem .75rem";
     //
   }
 }
@@ -212,7 +216,7 @@ cardsSection.addEventListener("click" , (e) => {
     selectedCategoriesDropdown.style.opacity = "100%";
     //show clear dropdown icon
     clearDropdownIcon.style.display = "block";
-    selectCategoriesDropdown.style.padding = "1rem 1.6rem 1rem 1rem";
+    selectCategoriesDropdown.style.padding = ".75rem 1.6rem .75rem .75rem";
     //next steps are in the submitNote() function
   }
 })
@@ -242,9 +246,11 @@ function submitCategory() {
     alert("Please write a acceptable category name.");
     return;
   }
-  //ALERT: duplicating categories
-  const categoryName = document.querySelector(".add-category-field").value;
+  //get category name and refactor it
+  let categoryName = document.querySelector(".add-category-field").value;
+  categoryName = categoryName.replace(/\s+/g, " ");
   categoryName = categoryName.trim();
+  //ALERT: duplicating categories
   for (let item of categories) {
     if(categoryName === item){
       document.querySelector(".add-category-field").value = null;
@@ -332,7 +338,7 @@ menuCategoriesDropdown.addEventListener("click",(e) => {
   if(e.target.nodeName === "LI") {
     //show clear dropdown icon
     clearDropdownIcon.style.display = "block";
-    selectCategoriesDropdown.style.padding = "1rem 1.6rem 1rem 1rem";
+    selectCategoriesDropdown.style.padding = ".75rem 1.6rem .75rem .75rem";
     //
     selectedCategoriesDropdown.innerText = e.target.innerText;
     selectedCategoriesDropdown.style.opacity = "100%";
@@ -400,7 +406,7 @@ function clearDropdown() {
   selectedCategoriesDropdown.style.opacity = "30%";
   //remove clear dropdown icon
   clearDropdownIcon.style.display = "none";
-  selectCategoriesDropdown.style.padding = "1rem 1.6rem 1rem";
+  selectCategoriesDropdown.style.padding = "1rem 1.6rem";
   //
 }
 
