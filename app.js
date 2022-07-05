@@ -244,6 +244,7 @@ function submitCategory() {
   }
   //ALERT: duplicating categories
   const categoryName = document.querySelector(".add-category-field").value;
+  categoryName = categoryName.trim();
   for (let item of categories) {
     if(categoryName === item){
       document.querySelector(".add-category-field").value = null;
@@ -254,8 +255,8 @@ function submitCategory() {
   //add category to sidebar
   categoriesSection.innerHTML += (`<li>
   <i class="fa-solid fa-trash delete-icon"></i>${categoryName}</li>`);
-  categories.push(categoryName);
   //add category to local storage
+  categories.push(categoryName);
   localStorage.setItem("categories",JSON.stringify(categories));
   //add category to dropdown menu
   newLiForDropdown = document.createElement('li');
