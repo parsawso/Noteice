@@ -285,13 +285,10 @@ document.onkeydown = function(){
 // remove category
 categoriesSection.addEventListener("click" , (e) => {
   if (e.target.classList[1] === "fa-trash") {
-    if (confirm(`Deleting this category will also delete ALL ITS CARDS!
-
-Are you sure you want to delete this category?`) == true) {
-      //remove all cards
+      //remove category from all cards
       cards.forEach((item) => {
         if(e.target.parentElement.innerText == item.cardCategoryName){
-          cards.splice(cards.indexOf(item),1);
+          item.cardCategoryName = "No Category"
         }
       })
       localStorage.setItem("cards",JSON.stringify(cards));
@@ -313,7 +310,6 @@ Are you sure you want to delete this category?`) == true) {
       //remove category from sidebar
       e.target.parentElement.remove();
       location.reload();
-    }
   }
 })
 
