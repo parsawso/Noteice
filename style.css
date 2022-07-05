@@ -304,6 +304,10 @@ header {
   border-radius: 1rem;
 }
 
+#No-Category {
+  opacity: 0;
+}
+
 /* adding notes */
 #add-notes-section {
   display: flex;
@@ -424,7 +428,7 @@ header {
   background-color: var(--light-color);
   box-shadow: 0 0 .5rem var(--shadow-color);
   border-radius: .5rem;
-  padding: 1rem 1.6rem 1rem 1rem;
+  padding: 1rem 1.6rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
